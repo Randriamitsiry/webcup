@@ -38,6 +38,11 @@ class Zone
     private $produits;
 
     /**
+     * @ORM\OneToMany(targetEntity="Service", mappedBy="zone")
+     */
+    private $services;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="zones" , cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id",nullable=true)
      */
@@ -46,6 +51,23 @@ class Zone
     public function __construct()
     {
         $this->produits = new ArrayCollection();
+        $this->services = new ArrayCollection();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getServices()
+    {
+        return $this->services;
+    }
+
+    /**
+     * @param mixed $services
+     */
+    public function setServices($services)
+    {
+        $this->services = $services;
     }
 
     /**
@@ -141,7 +163,23 @@ class Zone
     {
         $this->produits->removeElement($produit);
     }
-
+    /**
+     * Add Service
+     * @param \AppBundle\Entity\Service $service
+     */
+    public function addService(Service $service)
+    {
+        $this->services[] = $service;
+    }
+    /**
+     * Remove produit
+     *
+     * @param \AppBundle\Entity\Service $service
+     */
+    public function removeService(Service $service)
+    {
+        $this->produits->removeElement($service);
+    }
     /**
      * Set categorie
      *

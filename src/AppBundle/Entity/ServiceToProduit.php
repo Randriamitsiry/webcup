@@ -120,4 +120,8 @@ class ServiceToProduit
     {
         return $this->produit;
     }
+    public function __toString()
+    {
+        return $this->getService() ." - ".$this->getProduit();
+    }
 }

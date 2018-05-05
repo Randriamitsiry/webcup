@@ -34,7 +34,28 @@ class Service
      * @ORM\Column(name="Details", type="string", length=255)
      */
     private $details;
+    /**
+     * @ORM\ManyToOne(targetEntity="Zone")
+     */
+    private $zone;
 
+    /**
+     * @return Zone
+     */
+    public function getZone()
+    {
+        return $this->zone;
+    }
+
+    /**
+     * @param Zone $zone
+     * @return Service
+     */
+    public function setZone($zone)
+    {
+        $this->zone = $zone;
+        return $this;
+    }
 
     /**
      * Get id
@@ -92,5 +113,10 @@ class Service
     public function getDetails()
     {
         return $this->details;
+    }
+
+    public function __toString()
+    {
+        return $this->getZone() ." - ".$this->getDesignation();
     }
 }

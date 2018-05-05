@@ -123,4 +123,9 @@ class ProduitToService
     {
         return $this->service;
     }
+
+    public function __toString()
+    {
+        return $this->getProduit()." - ".$this->getService();
+    }
 }

@@ -121,4 +121,9 @@ class ProduitToProduit
     {
         return $this->destination;
     }
+
+    public function __toString()
+    {
+        return $this->getSource() ." - ".$this->getDestination();
+    }
 }

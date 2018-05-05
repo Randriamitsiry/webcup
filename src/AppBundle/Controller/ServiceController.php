@@ -17,7 +17,7 @@ class ServiceController extends Controller
      */
     public function indexAction($idZone)
     {
-       $em = $this-
+       //$em = $this-
     }
 
 }
