@@ -1,0 +1,84 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Echange
+ *
+ * @ORM\Table(name="echange")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\EchangeRepository")
+ * @ORM\HasLifecycleCallbacks
+ */
+class Echange
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Categorie")
+     */
+    private $offrant;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Categorie")
+     */
+    private $receveur;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_echange", type="datetime")
+     */
+    private $dateEchange;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set dateEchange
+     *
+     * @param \DateTime $dateEchange
+     *
+     * @return Echange
+     */
+    public function setDateEchange($dateEchange)
+    {
+        $this->dateEchange = $dateEchange;
+
+        return $this;
+    }
+
+    /**
+     * Get dateEchange
+     *
+     * @return \DateTime
+     */
+    public function getDateEchange()
+    {
+        return $this->dateEchange;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setDateToDefault()
+    {
+        $this->setDateEchange(new \DateTime("now"));
+    }
+}

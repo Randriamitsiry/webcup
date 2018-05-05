@@ -1,0 +1,41 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ServiveToService
+ *
+ * @ORM\Table(name="servive_to_service")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ServiveToServiceRepository")
+ */
+class ServiveToService
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Service")
+     */
+    private $source;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Service")
+     */
+    private $destination;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_echange", type="datetime")
+     */
+    private $dateEchange;
+}
+

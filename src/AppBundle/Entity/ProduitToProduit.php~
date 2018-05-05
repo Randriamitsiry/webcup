@@ -1,0 +1,43 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ProduitToProduit
+ *
+ * @ORM\Table(name="produit_to_produit")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProduitToProduitRepository")
+ */
+class ProduitToProduit
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Produit")
+     */
+    private $source;
+
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Produit")
+     */
+    private $destination;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_echange", type="datetime")
+     */
+    private $dateEchange;
+
+}
+
