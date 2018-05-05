@@ -87,8 +87,29 @@ easy_admin:
                   - { property: "designation", label: "Designation"}
                   - { property: "description", label: "Description"}
                   - { property: "produits", label: "Produits delivrés", type: collection , type_options: {entry_type: 'AppBundle\Form\ProduitType', allow_add: true, allow_delete: true, by_reference: false}}
-    #    - AppBundle\Entity\Zone
-    #    - AppBundle\Entity\Produit
-    #    - AppBundle\Entity\Service
-    #    - AppBundle\Entity\Echange
+        Produit:
+            class: AppBundle\Entity\Produit
+            form:
+              fields:
+                - { property: "designation" }
+                - { property: "zone" }
+                - { property: "photo", type: "file", type_options: {data_class: null}}
+            list:
+                fields:
+                - { property: "photo", type: "image", base_path: "/uploads/produit" }
+                - { property: "designation" }
+                - { property: "zone" }
+        Service:
+            class: AppBundle\Entity\Service
+
+        Echange:
+            class: AppBundle\Entity\Echange
     site_name: 'TROC-ZONE <em style="font-size: 80%;">Administration</em>'
+    design:
+      menu:
+          - {entity : "Categorie", icon: "list", label: "Categorie"}
+          - {entity : "Zone", icon: "group"}
+          - {entity : "Produit", icon: "ship"}
+          - {entity : "Service", icon: "asl-interpreting"}
+          - {entity : "Echange", icon: "exchange"}
+
