@@ -75,10 +75,20 @@ easy_admin:
             class: AppBundle\Entity\Categorie
             form:
                 fields:
+                 - { property: 'photo', type: "file", type_options: { data_class: null }, label: "Banner"}
                   - { property: 'designation', label: "Designation"}
                   - { property: 'description', label: "Description"}
+                  - { property: 'produitDescription', label: "Description des produits en globales"}
+                  - { property: 'apropos', label: "A propos"}
                   - { property: "zones", label: "Zones", type: collection , type_options: {entry_type: 'AppBundle\Form\ZoneType', allow_add: true, allow_delete: true, by_reference: false}}
-
+            list:
+                fields:
+                 - { property: 'photo', type: "image", base_path: "/uploads/categorie"}
+                  - { property: 'designation', label: "Designation"}
+                  - { property: 'description', label: "Description"}
+                  - { property: 'produitDescription', label: "Description des produits en globales"}
+                  - { property: 'apropos', label: "A propos"}
+                  - { property: "zones", label: "Zones", type: collection , type_options: {entry_type: 'AppBundle\Form\ZoneType', allow_add: true, allow_delete: true, by_reference: false}}
         Zone:
             class: AppBundle\Entity\Zone
             form:
@@ -87,6 +97,9 @@ easy_admin:
                   - { property: "designation", label: "Designation"}
                   - { property: "description", label: "Description"}
                   - { property: "produits", label: "Produits delivrés", type: collection , type_options: {entry_type: 'AppBundle\Form\ProduitType', allow_add: true, allow_delete: true, by_reference: false}}
+            list:
+              actions: ["edit", "show"]
+
         Produit:
 
             class: AppBundle\Entity\Produit
@@ -120,14 +133,14 @@ easy_admin:
                   - { property: "designation" }
             form:
               fields:
-                - { property: "designation" }
                 - { property: "zone" }
+                - { property: "designation" }
+                - { property: "details" }
                 - { property: "photo", type: "file", type_options: {data_class: null}}
 
         Demande:
             class: AppBundle\Entity\Demande
             list:
-                actions: ["edit", "show"]
                 fields:
                   - { property: "nom"}
                   - { property: "raison" }
@@ -145,10 +158,35 @@ easy_admin:
                   - { property: "nom" }
                   - { property: "contenu" }
 
+        Avis:
+
+            class: AppBundle\Entity\Avis
+            list:
+                - { property: "nom" }
+                - { property: "message" }
+                - { property: "dateAvis"}
+
+        Leader:
+            class: AppBundle\Entity\Leader
+            form:
+              - { property: "photo", type: "file", type_options: {data_class: null}}
+              - { property: "nom" }
+              - { property: "fonction" }
+              - { property: "mots"}
+              - { property: "categorie"}
+            list:
+              - { property: "photo", type: "image",base_path: "/uploads/leader"}
+              - { property: "nom" }
+              - { property: "fonction" }
+              - { property: "mots"}
+              - { property: "categorie"}
+
+
     site_name: 'TROC-ZONE <em style="font-size: 80%;">Administration</em>'
     design:
       menu:
           - {entity : "Categorie", icon: "list", label: "Categorie"}
+          - {entity: "Leader"}
           - {entity : "Zone", icon: "group"}
           - {entity : "Produit", icon: "ship"}
           - {entity : "Service", icon: "asl-interpreting"}
@@ -161,4 +199,8 @@ easy_admin:
                   - { label: 'Service-Produit', entity: 'ServiceToProduit' }
                   - { label: 'Produit-Produit', entity: 'ProduitToProduit' }
                   - { label: 'Produit-Service', entity: 'ProduitToService' }
+
+    show:
+      title: '%%entity_label%% [(%%entity_id%%)]'
+
 

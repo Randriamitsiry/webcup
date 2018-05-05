@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html >
 <head>
-    <!-- Site made with Mobirise Website Builder v4.7.1, javascript:; -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="generator" content="Mobirise v4.7.1, mobirise.com">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="shortcut icon" href="{{ asset('assetsimages/logo-chasseur.png')}}" type="image/x-icon">
-    <meta name="description" content="Website Creator Description">
-    <title>{% block title %}TROC-ZONE{% endblock %} | TROC-ZONE</title>
-    {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons/mobirise-icons.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/tether/tether.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-reboot.min.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/as-pie-progress/css/progress.min.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/custom/css/animate.min.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/dropdown/css/style.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/socicon/css/styles.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/theme/css/style.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/gallery/style.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
-        <link rel="stylesheet" href="{{ asset('assets/custom/css/custom.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/custom/css/custom.chasseur.css')}}">
-    {% endblock %}
+  <!-- Site made with Mobirise Website Builder v4.7.1, javascript:; -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.7.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{{ asset('assetsimages/logo-chasseur.png')}}" type="image/x-icon">
+  <meta name="description" content="Website Creator Description">
+    <title>{% block title %}{{ page | capitalize }}{% endblock %} | TROC-ZONE</title>
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons/mobirise-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/tether/tether.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-reboot.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/as-pie-progress/css/progress.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/custom/css/animate.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/dropdown/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/socicon/css/styles.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/theme/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/gallery/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/custom/css/custom.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/custom/css/custom.chasseur.css')}}">
+{% endblock %}
 
 </head>
 <body>
@@ -174,9 +174,9 @@
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="mbr-white col-md-10">
-                    <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1 wow fadeInDown">CHASSEURS</h1>
+                    <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1 wow fadeInDown">{{ page | upper }}</h1>
                     <h2 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2 wow fadeInUp">
-                        "La vraie passion c'est une quête, pas une impulsion, un emportement, un instinct de chasseur."
+                        "{{ categorie.description }}"
                     </h2>
                     <p class="mbr-text align-center pb-3 mbr-fonts-style display-7">
                         <!-- Full width intro with adjustable height, background image and a color overlay. Click any text to edit or style it. -->
@@ -198,7 +198,7 @@
                 <div class="title col-12 col-md-8">
                     <h1 class="align-center pb-3 mbr-fonts-style display-1"> A propos <div class="pb-3-border"></div> </h1>
                     <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-                        Façonnez votre futur projet web avec une conception précise et affinez les fonctions codées.Façonnez votre futur projet web avec une conception précise et affinez les fonctions codées.<br>
+                        {{ categorie.apropos }}
                     </h2>
                 </div>
             </div>
@@ -208,75 +208,61 @@
 {% endblock %}
 
 {% block competences %}
-    <!-- COMPETENCES NEO-ZONE -->
-    <section class="timeline1 cid-qRbW0bIY7b" id="timeline1-2k">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Compétences <div class="pb-3-border"></div> </h1>
-            </div>
+<!-- COMPETENCES NEO-ZONE -->
+<section class="timeline1 cid-qRbW0bIY7b" id="timeline1-2k">
+    <div class="media-container-row">
+        <div class="title col-12 col-md-8">
+            <h1 class="align-center pb-3 mbr-fonts-style display-1"> Compétences <div class="pb-3-border"></div> </h1>
         </div>
-        <div class="container align-center">
-            <div class="container timelines-container" mbri-timelines="">
-                <div class="row timeline-element reverse separline">
-                    <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
-                        <div class="time-line-date-content wow fadeInRight">
-                            <img src="{{ asset('assets/images/duck-hunting-wallpaper-hd2-632x356.jpg')}}" class="img-fluid">
+    </div>
+    <div class="container align-center">
+        <div class="container timelines-container" mbri-timelines="">
+            {% for service in zone[0].services %}
+                {% if loop.index is divisible by(2) %}
+                    <div class="row timeline-element reverse separline">
+                        <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
+                            <div class="time-line-date-content wow fadeInRight">
+                                <img src="{{ asset('uploads/service/'~service.photo~'')}}" class="img-fluid">
+                            </div>
+                        </div>
+                        <span class="iconBackground"></span>
+                        <div class="col-xs-12 col-md-6 align-right">
+                            <div class="timeline-text-content wow fadeInLeft">
+                                <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
+                                    {{ service.designation }}
+                                </h4>
+                                <p class="mbr-timeline-text mbr-fonts-style display-7">
+                                   {{ service.details }}
+                                    <a href="javascript:;">En savoir plus ...</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <span class="iconBackground"></span>
-                    <div class="col-xs-12 col-md-6 align-right">
-                        <div class="timeline-text-content wow fadeInLeft">
-                            <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-                                Le tir de précision
-                            </h4>
-                            <p class="mbr-timeline-text mbr-fonts-style display-7">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat libero, bibendum in libero tempor, luctus volutpat ligula. Integer fringilla porttitor pretium. Nam erat felis, iaculis id justo ut, ullamcorper feugiat elit. Proin vel lectus auctor, porttitor ligula vitae, convallis leo. In eget massa elit. <br><br>
-                                <a href="javascript:;">En savoir plus ...</a>
-                            </p>
+                    {% else %}
+                        <div class="row timeline-element  separline">
+                            <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
+                                <div class="time-line-date-content wow fadeInLeft">
+                                    <img src="{{ asset('uploads/service/'~service.photo~'')}}" class="img-fluid">
+                                </div>
+                            </div>
+                            <span class="iconBackground"></span>
+                            <div class="col-xs-12 col-md-6 align-left ">
+                                <div class="timeline-text-content wow fadeInRight">
+                                    <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
+                                        {{ service.designation }}
+                                    </h4>
+                                    <p class="mbr-timeline-text mbr-fonts-style display-7">
+                                        {{ service.details }} <br><br>
+                                        <a href="javascript:void()">En savoir plus ...</a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row timeline-element  separline">
-                    <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
-                        <div class="time-line-date-content wow fadeInLeft">
-                            <img src="{{ asset('assets/images/deer-hunting-wallpaper-hd5-632x356.jpg')}}" class="img-fluid">
-                        </div>
-                    </div>
-                    <span class="iconBackground"></span>
-                    <div class="col-xs-12 col-md-6 align-left ">
-                        <div class="timeline-text-content wow fadeInRight">
-                            <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-                                La chasse nocturne
-                            </h4>
-                            <p class="mbr-timeline-text mbr-fonts-style display-7">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat libero, bibendum in libero tempor, luctus volutpat ligula. Integer fringilla porttitor pretium. Nam erat felis, iaculis id justo ut, ullamcorper feugiat elit. Proin vel lectus auctor, porttitor ligula vitae, convallis leo. In eget massa elit. <br><br>
-                                <a href="javascript:void()">En savoir plus ...</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row timeline-element reverse">
-                    <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
-                        <div class="time-line-date-content wow fadeInRight">
-                            <img src="{{ asset('assets/images/deer-hunting-wallpaper-hd5-632x356.jpg')}}" class="img-fluid">
-                        </div>
-                    </div>
-                    <span class="iconBackground"></span>
-                    <div class="col-xs-12 col-md-6 align-right">
-                        <div class="timeline-text-content wow fadeInLeft">
-                            <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-                                Compétence 3
-                            </h4>
-                            <p class="mbr-timeline-text mbr-fonts-style display-7">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat libero, bibendum in libero tempor, luctus volutpat ligula. Integer fringilla porttitor pretium. Nam erat felis, iaculis id justo ut, ullamcorper feugiat elit. Proin vel lectus auctor, porttitor ligula vitae, convallis leo. In eget massa elit. <br><br>
-                                <a href="javascript:;">En savoir plus ...</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                {% endif %}
+            {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}
 {% block produits %}
     <!-- PRODUITS NEO-ZONE -->
@@ -285,54 +271,29 @@
             <div class="title col-12 col-md-8">
                 <h1 class="align-center pb-3 mbr-fonts-style display-1"> Produits <div class="pb-3-border"></div> </h1>
                 <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-                    Façonnez votre futur projet web avec une conception précise et affinez les fonctions codées.Façonnez votre futur projet web avec une conception précise et affinez les fonctions codées.<br>
+                    {{ categorie.produitDescription }}<br>
                 </h2>
 
             </div>
         </div>
         <div class="container">
             <div class="media-container-row">
+                {% for produit in zone[0].produits %}
                 <div class="card p-3 col-12 col-md-6 col-lg-4 wow fadeInUp">
                     <div class="card-wrapper">
                         <div class="card-img">
-                            <img src="{{ asset('assets/images/01.jpg')}}" alt="Mobirise">
+                            <img src="{{ asset('uploads/produit/'~produit.photo)}}" alt="{{ produit.designation }}">
                         </div>
                         <div class="card-box">
                             <h4 class="card-title pb-3 mbr-fonts-style display-5"> Armes</h4>
                             <p class="mbr-text mbr-fonts-style display-7">
-                                Mobirise is an easy website builder - just drop site elements to your page, add content and style it to look the way you like. <br><a href="http://mobirise.com">En savoir plus...</a>
+                                {{ produit.description }}
+                                 <br><a href="#">En savoir plus...</a>
                             </p>
                         </div>
                     </div>
                 </div>
-
-                <div class="card p-3 col-12 col-md-6 col-lg-4 wow fadeInUp">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="{{ asset('assets/images/02.jpg')}}" alt="Mobirise">
-                        </div>
-                        <div class="card-box ">
-                            <h4 class="card-title pb-3 mbr-fonts-style display-5"> Accessoires</h4>
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                All sites you make with Mobirise are mobile-friendly. You don't have to create a special mobile version of your site. <br><a href="http://mobirise.com">En savoir plus...</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card p-3 col-12 col-md-6 col-lg-4 wow fadeInUp">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="{{ asset('assets/images/03.jpg')}}" alt="Mobirise">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title pb-3 mbr-fonts-style display-5"> Nouritures</h4>
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                Mobirise offers many site blocks in several themes, and though these blocks are pre-made, they are flexible.<br><a href="http://mobirise.com">En savoir plus...</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -449,61 +410,61 @@
         </div>
     </section>
 {% endblock %}
-<!-- ZIG -->
-<!-- <section class="progress-bars3 cid-qRbWFhLtxE mbr-parallax-background" id="progress-bars3-2m">
-    <div class="media-container-row">
-        <div class="title col-12 col-md-8">
-            <h1 class="align-center pb-3 mbr-fonts-style display-1"> Statistique du NEO-ZONE <div class="pb-3-border"></div> </h1>
-            <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-                <strong>Le NEO-ZONE Chasseur en quelques chiffres</strong><br>
-            </h2>
-        </div>
-    </div>
-    <div class="container">
-        <div class="media-container-row pt-5 mt-2">
-            <div class="card p-3 align-center">
-                <div class="wrap">
-                    <div class="pie_progress progress1" role="progressbar" data-goal="38.2">
-                        <p class="pie_progress__number mbr-fonts-style display-5"></p>
-                    </div>
-                </div>
-                <div class="mbr-crt-title pt-3">
-                    <h4 class="card-title py-2 mbr-fonts-style display-5"> Incubés sur les 3 500 Max</h4>
-                </div>
-            </div>
-            <div class="card p-3 align-center">
-                <div class="wrap">
-                    <div class="pie_progress progress2" role="progressbar" data-goal="1.2">
-                        <p class="pie_progress__number mbr-fonts-style display-5"></p>
-                    </div>
-                </div>
-                <div class="mbr-crt-title pt-3">
-                    <h4 class="card-title py-2 mbr-fonts-style display-5"> Taux de mortalité </h4>
-                </div>
-            </div>
-            <div class="card p-3 align-center">
-                <div class="wrap">
-                    <div class="pie_progress progress3" role="progressbar" data-goal="70">
-                        <p class="pie_progress__number mbr-fonts-style display-5"></p>
-                    </div>
-                </div>
-                <div class="mbr-crt-title pt-3">
-                    <h4 class="card-title py-2 mbr-fonts-style display-5"> Nightlife </h4>
-                </div>
-            </div>
-            <div class="card p-3 align-center">
-                <div class="wrap">
-                    <div class="pie_progress progress3" role="progressbar" data-goal="70">
-                        <p class="pie_progress__number mbr-fonts-style display-5"></p>
-                    </div>
-                </div>
-                <div class="mbr-crt-title pt-3">
-                    <h4 class="card-title py-2 mbr-fonts-style display-5"> Nightlife </h4>
-                </div>
+    <!-- ZIG -->
+    <!-- <section class="progress-bars3 cid-qRbWFhLtxE mbr-parallax-background" id="progress-bars3-2m">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Statistique du NEO-ZONE <div class="pb-3-border"></div> </h1>
+                <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
+                    <strong>Le NEO-ZONE Chasseur en quelques chiffres</strong><br>
+                </h2>
             </div>
         </div>
-    </div>
-</section> -->
+        <div class="container">
+            <div class="media-container-row pt-5 mt-2">
+                <div class="card p-3 align-center">
+                    <div class="wrap">
+                        <div class="pie_progress progress1" role="progressbar" data-goal="38.2">
+                            <p class="pie_progress__number mbr-fonts-style display-5"></p>
+                        </div>
+                    </div> 
+                    <div class="mbr-crt-title pt-3">
+                        <h4 class="card-title py-2 mbr-fonts-style display-5"> Incubés sur les 3 500 Max</h4>
+                    </div>                 
+                </div>
+                <div class="card p-3 align-center">
+                    <div class="wrap">
+                        <div class="pie_progress progress2" role="progressbar" data-goal="1.2">
+                            <p class="pie_progress__number mbr-fonts-style display-5"></p>
+                        </div>
+                    </div> 
+                    <div class="mbr-crt-title pt-3">
+                        <h4 class="card-title py-2 mbr-fonts-style display-5"> Taux de mortalité </h4>
+                    </div>                 
+                </div>
+                <div class="card p-3 align-center">
+                    <div class="wrap">
+                        <div class="pie_progress progress3" role="progressbar" data-goal="70">
+                            <p class="pie_progress__number mbr-fonts-style display-5"></p>
+                        </div>
+                    </div> 
+                    <div class="mbr-crt-title pt-3">
+                        <h4 class="card-title py-2 mbr-fonts-style display-5"> Nightlife </h4>
+                    </div>                 
+                </div>
+                <div class="card p-3 align-center">
+                    <div class="wrap">
+                        <div class="pie_progress progress3" role="progressbar" data-goal="70">
+                            <p class="pie_progress__number mbr-fonts-style display-5"></p>
+                        </div>
+                    </div> 
+                    <div class="mbr-crt-title pt-3">
+                        <h4 class="card-title py-2 mbr-fonts-style display-5"> Nightlife </h4>
+                    </div>                 
+                </div>
+            </div>
+        </div>
+    </section> -->
 {% block stats %}
     <section class="counters1 counters cid-qRcR8pp6Bn" id="counters1-2q">
         <div class="media-container-row">
@@ -790,7 +751,7 @@
     </script>
 {% endblock %}
 
-<div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
-<!-- <input name="animation" type="hidden"> -->
+    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
+    <!-- <input name="animation" type="hidden"> -->
 </body>
 </html>

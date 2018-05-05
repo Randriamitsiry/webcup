@@ -40,6 +40,78 @@ class Categorie
      * @ORM\OneToMany(targetEntity="Zone", mappedBy="categorie")
      */
     private $zones;
+    /**
+     * @ORM\Column(name="photo", type="string")
+     */
+    private $photo;
+
+    /**
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param string $photo
+     * @return Categorie
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+        return $this;
+    }
+
+    /**
+     * @var string
+     * @ORM\Column(name="propos", type="string", nullable=true)
+     */
+    private $apropos;
+    /**
+     * @var string
+     * @ORM\Column(name="produitDescription", type="string")
+     */
+    private $produitDescription;
+
+    /**
+     * @return string
+     */
+    public function getProduitDescription()
+    {
+        return $this->produitDescription;
+    }
+
+    /**
+     * @param string $produitDescription
+     * @return Categorie
+     */
+    public function setProduitDescription($produitDescription)
+    {
+        $this->produitDescription = $produitDescription;
+    }
+
+    /**
+     * @return string
+     */
+    public function getApropos()
+    {
+        return $this->apropos;
+    }
+
+    /**
+     * @param string $apropos
+     * @return Categorie
+     */
+    public function setApropos($apropos)
+    {
+        $this->apropos = $apropos;
+        return $this;
+    }
+
+    /**
+     * Categorie constructor.@
+     */
 
     public function __construct()
     {
@@ -158,5 +230,19 @@ class Categorie
     public function __toString()
     {
         return $this->getDesignation();
+    }
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function uploadPhoto()
+    {
+        $fileName = md5(uniqid()).'.'.$this->getPhoto()->guessExtension();
+        try {
+            $this->photo->move("../web/uploads/categorie", $fileName);
+        } catch (\Exception $exception) {
+            throw $exception;
+        }
+        $this->setPhoto($fileName);
     }
 }

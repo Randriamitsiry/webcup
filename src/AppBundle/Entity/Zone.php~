@@ -43,6 +43,11 @@ class Zone
     private $services;
 
     /**
+     * @ORM\OneToMany(targetEntity="Avis", mappedBy ="zone")
+     */
+    private $avis;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="zones" , cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id",nullable=true)
      */

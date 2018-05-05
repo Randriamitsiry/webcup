@@ -1,0 +1,82 @@
+.nav-item .active {
+	color: #435847!important;
+	border-bottom: 2px solid #435847!important;
+}
+
+#navbarSupportedContent .navbar-buttons .btn {
+	background: #435847!important;
+	border-color: #435847 !important;
+}
+
+#header1-k .btn {
+	background-color: transparent!important;
+    border-color: #FFFFFF !important;
+    color: white!important;
+}
+
+.title .pb-3 {
+	font-variant: small-caps;
+}
+
+.title .pb-3, .media-content h3 {
+	color: #435847!important;
+}
+
+.title .pb-3-border {
+	position: relative;
+	width: 4%;
+	height: 3px;
+	top: 5px;
+	margin: auto;
+	background: #435847;
+}
+
+
+.media-content h3 {
+	margin-bottom: 10px;
+}
+
+/* Back to Top */
+.mbr-arrow-up a {
+    background: rgba(57, 74, 51, 0.8)!important;
+}
+
+.timeline1 {
+	padding-bottom: 10px;
+}
+
+.timeline-element .iconBackground, .cid-qRbW0bIY7b .separline:before {
+	background-color: #435847;
+}
+
+/* CTA */
+.cta .btn {
+	background-color: #FFFFFF!important;
+    border-color: #435847 !important;
+    color: black!important;
+}
+#header1-k .btn:hover, .cta .btn:hover {
+	background-color: #435847!important;
+    border-color: #435847 !important;
+    color: white!important;
+}
+
+/* FOOTER */
+.cid-qRaGMZfHcJ {
+    background-color: #435847;
+}
+
+.foot-title {
+	color: #F9F9F9;
+}
+.mbr-links-column a {
+	color: #FFFFFF;
+}
+.mbr-links-column .active {
+	color: #FFFFFF;
+}
+
+/* FOOTER COPYRIGHR & FOOTER SOCIAL ICON */
+.footer-lower .copyright .mbr-text, .footer-lower .social-list .mbr-iconfont-social {
+	color: white!important;
+}

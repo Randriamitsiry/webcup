@@ -43,6 +43,11 @@ class Zone
     private $services;
 
     /**
+     * @ORM\OneToMany(targetEntity="Avis", mappedBy ="zone")
+     */
+    private $avis;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="zones" , cascade={"persist", "remove"})
      * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id",nullable=true)
      */
@@ -52,6 +57,7 @@ class Zone
     {
         $this->produits = new ArrayCollection();
         $this->services = new ArrayCollection();
+        $this->avis = new ArrayCollection();
     }
 
     /**
@@ -207,5 +213,39 @@ class Zone
     public function __toString()
     {
         return $this->getCategorie() ." - ".$this->getDesignation();
+    }
+
+    /**
+     * Add avi
+     *
+     * @param \AppBundle\Entity\Avis $avi
+     *
+     * @return Zone
+     */
+    public function addAvi(\AppBundle\Entity\Avis $avi)
+    {
+        $this->avis[] = $avi;
+
+        return $this;
+    }
+
+    /**
+     * Remove avi
+     *
+     * @param \AppBundle\Entity\Avis $avi
+     */
+    public function removeAvi(\AppBundle\Entity\Avis $avi)
+    {
+        $this->avis->removeElement($avi);
+    }
+
+    /**
+     * Get avis
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAvis()
+    {
+        return $this->avis;
     }
 }

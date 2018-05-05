@@ -1,0 +1,48 @@
+.navbar {
+	box-shadow: 5px 2px 2px -2px rgba(0,0,0,.2);
+}
+
+/* Custom Login Form */
+	.own-modal .modal-dialog .modal-content {
+		color: black!important;
+	}
+	/*.own-modal input {
+	  background-color: #f6f6f6;
+	  border: none;
+	  color: #0d0d0d;
+	  padding: 15px 32px;
+	  text-align: center;
+	  text-decoration: none;
+	  display: inline-block;
+	  font-size: 16px;
+	  margin: 5px;
+	  border: 2px solid #f6f6f6;
+	  -webkit-transition: all 0.5s ease-in-out;
+	  -moz-transition: all 0.5s ease-in-out;
+	  -ms-transition: all 0.5s ease-in-out;
+	  -o-transition: all 0.5s ease-in-out;
+	  transition: all 0.5s ease-in-out;
+	  -webkit-border-radius: 5px 5px 5px 5px;
+	  border-radius: 5px 5px 5px 5px;
+	}*/
+	.field-icon {
+	  float: right;
+	  font-size: 16px;
+	  color: #0d0d0d;
+	  margin-right: 10px;
+	  margin-top: -40px;
+	  position: relative;
+	  z-index: 2;
+	}
+
+	/* Custom user Nav Link */
+	.user-nav-link {
+		margin-top: -7px;
+	}
+	.user-nav-link a::after {
+	    display: none!important;
+	}
+	.reseted-dropdown .dropdown-menu {
+		right: 0px!important;
+		width: 250px!important;
+	}
