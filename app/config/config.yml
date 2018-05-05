@@ -9,6 +9,7 @@ parameters:
     locale: en
 
 framework:
+    default_locale: 'fr'
     #esi:             ~
     #translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
@@ -31,6 +32,7 @@ framework:
     fragments:       ~
     http_method_override: true
     assets: ~
+    translator: { fallbacks: [ "fr" ] }
 
 # Twig Configuration
 twig:
@@ -66,3 +68,27 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+easy_admin:
+    entities:
+        Categorie:
+            class: AppBundle\Entity\Categorie
+            form:
+                fields:
+                  - { property: 'designation', label: "Designation"}
+                  - { property: 'description', label: "Description"}
+                  - { property: "zones", label: "Zones", type: collection , type_options: {entry_type: 'AppBundle\Form\ZoneType', allow_add: true, allow_delete: true, by_reference: false}}
+
+        Zone:
+            class: AppBundle\Entity\Zone
+            form:
+                fields:
+                  - { property: "categorie"}
+                  - { property: "designation", label: "Designation"}
+                  - { property: "description", label: "Description"}
+                  - { property: "produits", label: "Produits delivrés", type: collection , type_options: {entry_type: 'AppBundle\Form\ProduitType', allow_add: true, allow_delete: true, by_reference: false}}
+    #    - AppBundle\Entity\Zone
+    #    - AppBundle\Entity\Produit
+    #    - AppBundle\Entity\Service
+    #    - AppBundle\Entity\Echange
+    site_name: 'TROC-ZONE <em style="font-size: 80%;">Administration</em>'
