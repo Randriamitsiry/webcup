@@ -113,6 +113,38 @@ easy_admin:
             class: AppBundle\Entity\ProduitToService
         Service:
             class: AppBundle\Entity\Service
+            list:
+                fields:
+                  - { property: "photo", type: "image", base_path: "/uploads/service" }
+                  - { property: "zone"}
+                  - { property: "designation" }
+            form:
+              fields:
+                - { property: "designation" }
+                - { property: "zone" }
+                - { property: "photo", type: "file", type_options: {data_class: null}}
+
+        Demande:
+            class: AppBundle\Entity\Demande
+            list:
+                actions: ["edit", "show"]
+                fields:
+                  - { property: "nom"}
+                  - { property: "raison" }
+                  - { property: "statut", type: 'toggle' }
+        Temoignage:
+            class: AppBundle\Entity\Temoignage
+            form:
+                fields:
+                  - { property: "nom" }
+                  - { property: "contenu" }
+                  - { property: "photo", type: "file", type_options: {data_class: null}}
+            list:
+                fields:
+                  - { property: "photo", type: "image", base_path: "/uploads/temoin" }
+                  - { property: "nom" }
+                  - { property: "contenu" }
+
     site_name: 'TROC-ZONE <em style="font-size: 80%;">Administration</em>'
     design:
       menu:
@@ -120,6 +152,8 @@ easy_admin:
           - {entity : "Zone", icon: "group"}
           - {entity : "Produit", icon: "ship"}
           - {entity : "Service", icon: "asl-interpreting"}
+          - {entity : "Demande"}
+          - {entity : "Temoignage"}
           - label: "Echanges"
             icon: "user"
             children:

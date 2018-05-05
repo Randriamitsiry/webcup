@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="temoignage")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TemoignageRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Temoignage
 {
@@ -123,5 +124,20 @@ class Temoignage
     public function getContenu()
     {
         return $this->contenu;
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function uploadPhoto()
+    {
+        $fileName = md5(uniqid()).'.'.$this->getPhoto()->guessExtension();
+        try {
+            $this->photo->move("../web/uploads/temoin", $fileName);
+        } catch (\Exception $exception) {
+            throw $exception;
+        }
+        $this->setPhoto($fileName);
     }
 }

@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="service")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ServiceRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Service
 {
@@ -35,10 +36,30 @@ class Service
      */
     private $details;
     /**
-     * @ORM\ManyToOne(targetEntity="Zone")
+     * @ORM\ManyToOne(targetEntity="Zone", inversedBy="services")
      */
     private $zone;
+    /**
+     * @var string
+     * @ORM\Column(name = "photo", type="string")
+     */
+    private $photo;
 
+    /**
+     * @return mixed
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param mixed $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
     /**
      * @return Zone
      */
@@ -118,5 +139,20 @@ class Service
     public function __toString()
     {
         return $this->getZone() ." - ".$this->getDesignation();
+    }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function uploadPhoto()
+    {
+        $fileName = md5(uniqid()).'.'.$this->getPhoto()->guessExtension();
+        try {
+            $this->photo->move("../web/uploads/service", $fileName);
+        } catch (\Exception $exception) {
+            throw $exception;
+        }
+        $this->setPhoto($fileName);
     }
 }

@@ -1,38 +1,43 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: JESS
+ * Date: 05/05/2018
+ * Time: 21:36
+ */
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Service;
+use AppBundle\Entity\Temoignage;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
+ * Class TemoignageController
  * @package AppBundle\Controller
- * @Route("/service", name="zone_home")
+ * @Route("/temoignage")
  */
-class ServiceController extends Controller
+class TemoignageController extends Controller
 {
     /**
-     * @Route("/get/{idZone}")
-     * @return JsonResponse
+     * @Route("/")
      */
-    public function indexAction($idZone)
+    public function indexAction()
     {
         $em = $this->getDoctrine()->getEntityManager();
-        $items = $em->getRepository(Service::class)->findBy(["zone"=>$idZone]);
+        $items = $em->getRepository(Temoignage::class)->findAll();
         //return new JsonResponse($items);
         $arrayCollection = array();
 
         foreach($items as $item) {
             $arrayCollection[] = array(
-                'designation'=>$item->getDesignation(),
+                'nom'=>$item->getNom(),
                 'photo'=>$item->getPhoto(),
-                'details'=>$item->getDetails(),
+                'contenu'=>$item->getContenu()
                 // ... Same for each property you want
             );
         }
         return new JsonResponse($arrayCollection);
     }
-
 }
