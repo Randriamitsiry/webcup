@@ -44,7 +44,7 @@
                 <div class="navbar-brand">
                     <span class="navbar-logo">
                         <a href="javascript:;">
-                            <img src="{{ asset('assets/images/logo-'~page~'.png')}}" alt="{{ page }}" style="height: 3.8rem;">
+                            <img src="{{ asset('assets/images/logo-'~page~'.png')}}" style="height: 3.8rem;">
                         </a>
                     </span>
                 </div>
@@ -79,13 +79,10 @@
                     </li>
                 </ul>
                 <div class="navbar-buttons mbr-section-btn">
-                    <a class="btn btn-sm btn-primary display-4 join-btn" href="tel:+1-234-567-8901">
-                        <span class="mbrib-login mbr-iconfont mbr-iconfont-btn"></span>
-                        REJOINDRE
-                    </a>
+                    <a class="btn btn-sm btn-primary display-4 join-btn" data-toggle="modal" data-target="#register-modal"> REJOINDRE </a>
                 </div>
                 <div class="navbar-buttons mbr-section-btn">
-                    <a class="btn btn-sm btn-primary display-4" data-toggle="modal" data-target="#login-modal"> ECHANGE </a>
+                    <a class="btn btn-sm btn-primary display-4" href="{{ path('page_route', {'page':'echange'}) }}"> ECHANGE </a>
                 </div>
             </div>
         </nav>
@@ -108,7 +105,7 @@
                 <div class="navbar-brand">
                     <span class="navbar-logo">
                         <a href="javascript:;">
-                            <img src="{{ asset('assets/images/logo-chasseur.png')}}" alt="Mobirise" style="height: 3.8rem;">
+                            <img src="{{ asset('assets/images/logo-chasseur.png')}}" style="height: 3.8rem;">
                         </a>
                     </span>
                 </div>
@@ -159,10 +156,10 @@
                     </li>
                 </ul>
                 <div class="navbar-buttons mbr-section-btn">
-                    <a class="btn btn-sm btn-primary display-4" href="tel:+1-234-567-8901"> REJOINDRE </a>
+                    <a class="btn btn-sm btn-primary display-4 join-btn" data-toggle="modal" data-target="#register-modal"> REJOINDRE </a>
                 </div>
                 <div class="navbar-buttons mbr-section-btn">
-                    <a class="btn btn-sm btn-primary display-4"> ECHANGE </a>
+                    <a class="btn btn-sm btn-primary display-4" href="{{ path('page_route', {'page':'echange'}) }}"> ECHANGE </a>
                 </div>
             </div>
         </nav>
@@ -176,7 +173,11 @@
                 <div class="mbr-white col-md-10">
                     <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1 wow fadeInDown">{{ page | upper }}</h1>
                     <h2 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2 wow fadeInUp">
-                        "{{ categorie.description }}"
+                        {% if categorie %}
+                            "{{ categorie.description }}"
+                            {% else %}
+                                "Categorie encore vide"
+                        {% endif %}
                     </h2>
                     <p class="mbr-text align-center pb-3 mbr-fonts-style display-7">
                         <!-- Full width intro with adjustable height, background image and a color overlay. Click any text to edit or style it. -->
@@ -198,7 +199,11 @@
                 <div class="title col-12 col-md-8">
                     <h1 class="align-center pb-3 mbr-fonts-style display-1"> A propos <div class="pb-3-border"></div> </h1>
                     <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-                        {{ categorie.apropos }}
+                        {% if categorie %}
+                            "{{ categorie.apropos }}"
+                            {% else %}
+                                "Categorie encore vide"
+                        {% endif %}
                     </h2>
                 </div>
             </div>
@@ -217,49 +222,54 @@
     </div>
     <div class="container align-center">
         <div class="container timelines-container" mbri-timelines="">
-            {% for service in zone[0].services %}
-                {% if loop.index is divisible by(2) %}
-                    <div class="row timeline-element reverse separline">
-                        <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
-                            <div class="time-line-date-content wow fadeInRight">
-                                <img src="{{ asset('uploads/service/'~service.photo~'')}}" class="img-fluid">
-                            </div>
-                        </div>
-                        <span class="iconBackground"></span>
-                        <div class="col-xs-12 col-md-6 align-right">
-                            <div class="timeline-text-content wow fadeInLeft">
-                                <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-                                    {{ service.designation }}
-                                </h4>
-                                <p class="mbr-timeline-text mbr-fonts-style display-7">
-                                   {{ service.details }}
-                                    <a href="javascript:;">En savoir plus ...</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    {% else %}
-                        <div class="row timeline-element  separline">
-                            <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
-                                <div class="time-line-date-content wow fadeInLeft">
-                                    <img src="{{ asset('uploads/service/'~service.photo~'')}}" class="img-fluid">
-                                </div>
-                            </div>
-                            <span class="iconBackground"></span>
-                            <div class="col-xs-12 col-md-6 align-left ">
-                                <div class="timeline-text-content wow fadeInRight">
-                                    <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-                                        {{ service.designation }}
-                                    </h4>
-                                    <p class="mbr-timeline-text mbr-fonts-style display-7">
-                                        {{ service.details }} <br><br>
-                                        <a href="javascript:void()">En savoir plus ...</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                {% endif %}
-            {% endfor %}
+        	{% if zone %}
+        		 {% for service in zone[0].services %}
+	                {% if loop.index is divisible by(2) %}
+	                    <div class="row timeline-element reverse separline">
+	                        <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
+	                            <div class="time-line-date-content wow fadeInRight">
+	                                <img src="{{ asset('uploads/service/'~service.photo~'')}}" class="img-fluid">
+	                            </div>
+	                        </div>
+	                        <span class="iconBackground"></span>
+	                        <div class="col-xs-12 col-md-6 align-right">
+	                            <div class="timeline-text-content wow fadeInLeft">
+	                                <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
+	                                    {{ service.designation }}
+	                                </h4>
+	                                <p class="mbr-timeline-text mbr-fonts-style display-7">
+	                                   {{ service.details }}
+	                                    <a href="javascript:;">En savoir plus ...</a>
+	                                </p>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    {% else %}
+	                        <div class="row timeline-element  separline">
+	                            <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
+	                                <div class="time-line-date-content wow fadeInLeft">
+	                                    <img src="{{ asset('uploads/service/'~service.photo~'')}}" class="img-fluid">
+	                                </div>
+	                            </div>
+	                            <span class="iconBackground"></span>
+	                            <div class="col-xs-12 col-md-6 align-left ">
+	                                <div class="timeline-text-content wow fadeInRight">
+	                                    <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
+	                                        {{ service.designation }}
+	                                    </h4>
+	                                    <p class="mbr-timeline-text mbr-fonts-style display-7">
+	                                        {{ service.details }} <br><br>
+	                                        <a href="javascript:void()">En savoir plus ...</a>
+	                                    </p>
+	                                </div>
+	                            </div>
+	                        </div>
+	                {% endif %}
+            	{% endfor %}
+            	{% else %}
+            		"Categorie vide"
+        	{% endif %}
+           
         </div>
     </div>
 </section>
@@ -271,29 +281,41 @@
             <div class="title col-12 col-md-8">
                 <h1 class="align-center pb-3 mbr-fonts-style display-1"> Produits <div class="pb-3-border"></div> </h1>
                 <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-                    {{ categorie.produitDescription }}<br>
+                	{% if categorie %}
+                		{{ categorie.produitDescription }}
+                		{% else %}
+                		"Categorie vide"
+                	{% endif %}
+                    <br>
+               
                 </h2>
 
             </div>
         </div>
         <div class="container">
             <div class="media-container-row">
-                {% for produit in zone[0].produits %}
-                <div class="card p-3 col-12 col-md-6 col-lg-4 wow fadeInUp">
-                    <div class="card-wrapper">
-                        <div class="card-img">
-                            <img src="{{ asset('uploads/produit/'~produit.photo)}}" alt="{{ produit.designation }}">
-                        </div>
-                        <div class="card-box">
-                            <h4 class="card-title pb-3 mbr-fonts-style display-5"> Armes</h4>
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                {{ produit.description }}
-                                 <br><a href="#">En savoir plus...</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+            	{% if categorie %}
+            		 {% for produit in zone[0].produits %}
+	                <div class="card p-3 col-12 col-md-6 col-lg-4 wow fadeInUp">
+	                    <div class="card-wrapper">
+	                        <div class="card-img">
+	                            <img src="{{ asset('uploads/produit/'~produit.photo)}}">
+	                        </div>
+	                        <div class="card-box">
+	                            <h4 class="card-title pb-3 mbr-fonts-style display-5">{{ produit.designation }}</h4>
+	                            <p class="mbr-text mbr-fonts-style display-7">
+                                    {% if produit %}
+                                        {{ produit.details }}
+                                        <br><a href="#">En savoir plus...</a>
+                                    {% endif %}
+	                                
+	                            </p>
+	                        </div>
+	                    </div>
+	                </div>
+	                {% endfor %}
+            	{% endif %}
+               
             </div>
         </div>
     </section>
@@ -391,80 +413,32 @@
 {% block leader %}
     <!-- NEO-ZONE LEADER -->
     <section class="testimonials2 cid-qRaKHo0BHn mbr-parallax-background" id="testimonials2-r">
-        <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"> </div>
-        <div class="container">
-            <div class="media-container-row">
-                <div class="mbr-figure pr-lg-5" style="width: 45%;">
-                    <img src="{{ asset('assets/images/face4.jpg')}}">
-                </div>
-                <div class="media-content px-3 align-self-center mbr-white py-2">
-                    <p class="mbr-text testimonial-text mbr-fonts-style display-7">
-                        Loving the additions to the new version of Mobirise web dev app. It's a great, cleanly designed, user-friendly, not-bloated design program. So easy and a pleasure to use
-                    </p>
-                    <p class="mbr-author-name pt-4 mb-2 mbr-fonts-style display-7">
-                        David F.
-                    </p>
-                    <p class="mbr-author-desc mbr-fonts-style display-7"> LE CHANCELIER</p>
+        {% if categorie %}
+            <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"> </div>
+            <div class="container">
+                <div class="media-container-row">
+                    {% if categorie.leader %}
+                         <div class="mbr-figure pr-lg-5" style="width: 45%;">
+                            <img src="{{ asset('uploads/leader/'~categorie.leader.photo)}}">
+                        </div>
+                        <div class="media-content px-3 align-self-center mbr-white py-2">
+                            <p class="mbr-text testimonial-text mbr-fonts-style display-7">
+                                {{ categorie.leader.mots }}
+                            </p>
+                            <p class="mbr-author-name pt-4 mb-2 mbr-fonts-style display-7">
+                                {{ categorie.leader.nom }}
+                            </p>
+                            <p class="mbr-author-desc mbr-fonts-style display-7"> {{ categorie.leader.fonction | upper }}</p>
+                        </div>
+                    {% endif %}
+                   
                 </div>
             </div>
-        </div>
+        {% endif %}
     </section>
 {% endblock %}
-    <!-- ZIG -->
-    <!-- <section class="progress-bars3 cid-qRbWFhLtxE mbr-parallax-background" id="progress-bars3-2m">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Statistique du NEO-ZONE <div class="pb-3-border"></div> </h1>
-                <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-                    <strong>Le NEO-ZONE Chasseur en quelques chiffres</strong><br>
-                </h2>
-            </div>
-        </div>
-        <div class="container">
-            <div class="media-container-row pt-5 mt-2">
-                <div class="card p-3 align-center">
-                    <div class="wrap">
-                        <div class="pie_progress progress1" role="progressbar" data-goal="38.2">
-                            <p class="pie_progress__number mbr-fonts-style display-5"></p>
-                        </div>
-                    </div> 
-                    <div class="mbr-crt-title pt-3">
-                        <h4 class="card-title py-2 mbr-fonts-style display-5"> Incubés sur les 3 500 Max</h4>
-                    </div>                 
-                </div>
-                <div class="card p-3 align-center">
-                    <div class="wrap">
-                        <div class="pie_progress progress2" role="progressbar" data-goal="1.2">
-                            <p class="pie_progress__number mbr-fonts-style display-5"></p>
-                        </div>
-                    </div> 
-                    <div class="mbr-crt-title pt-3">
-                        <h4 class="card-title py-2 mbr-fonts-style display-5"> Taux de mortalité </h4>
-                    </div>                 
-                </div>
-                <div class="card p-3 align-center">
-                    <div class="wrap">
-                        <div class="pie_progress progress3" role="progressbar" data-goal="70">
-                            <p class="pie_progress__number mbr-fonts-style display-5"></p>
-                        </div>
-                    </div> 
-                    <div class="mbr-crt-title pt-3">
-                        <h4 class="card-title py-2 mbr-fonts-style display-5"> Nightlife </h4>
-                    </div>                 
-                </div>
-                <div class="card p-3 align-center">
-                    <div class="wrap">
-                        <div class="pie_progress progress3" role="progressbar" data-goal="70">
-                            <p class="pie_progress__number mbr-fonts-style display-5"></p>
-                        </div>
-                    </div> 
-                    <div class="mbr-crt-title pt-3">
-                        <h4 class="card-title py-2 mbr-fonts-style display-5"> Nightlife </h4>
-                    </div>                 
-                </div>
-            </div>
-        </div>
-    </section> -->
+
+
 {% block stats %}
     <section class="counters1 counters cid-qRcR8pp6Bn" id="counters1-2q">
         <div class="media-container-row">
@@ -586,7 +560,7 @@
                     Façonnez votre futur projet web avec une conception précise et affinez les fonctions codées.Façonnez votre futur projet web avec une conception précise et affinez les fonctions codées.<br>
                 </h2>
                 <div class="mbr-section-btn align-center cta">
-                    <a class="btn btn-md btn-primary display-4" href="javascript:;"> NOUS REJOINDRE </a>
+                    <a class="btn btn-md btn-primary display-4" href="javascript:;" data-toggle="modal" data-target="#register-modal"> NOUS REJOINDRE </a>
                 </div>
             </div>
         </div>
@@ -691,38 +665,83 @@
     </section>
 {% endblock %}
 
-{% block modals %}
+{% block modals_login %}
     <!-- NEO-ZONE MODALS -->
     <!-- LOGIN -->
     <div class="modal fade own-modal" tabindex="-1" role="dialog" aria-hidden="true" id="login-modal">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <img src="{{ asset('assets/custom/css/svg/user.svg')}}" width="60%" alt="User icon"/><br>
-                            <h4 class="text-black">Connexion</h4>
-                        </div>
-                    </div>
-                    <form class="login_form" style="margin-top: 20px;">
-                        <div class="login_notification text-center"></div>
-                        <div class="form-group">
-                            <input type="text" class="form-control auth_login" id="auth_login" placeholder="2DW009 ou E-UNIV620">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control auth_mdp password-field" id="auth_mdp" placeholder="xxxxxxxxxxxx">
-                            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                        </div>
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn btn-info text-center">SE CONNECTER</button>
-                        </div>
-                    </form>
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                    <img src="assets/custom/css/svg/user.svg" width="60%" alt="User icon"/><br>
+                    <h4 class="text-black">Connexion</h4>
                 </div>
+              </div>
+              <form class="login_form" style="margin-top: 20px;">
+                <div class="login_notification text-center"></div>
+                <div class="form-group">
+                  <input type="text" class="form-control auth_login" id="auth_login" placeholder="">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control auth_mdp password-field" id="auth_mdp" placeholder="xxxxxxxxxxxx">
+                  <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-info text-center">SE CONNECTER</button>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
     </div>
-
 {% endblock %}
+
+{% block modals_register %}
+<!-- REJOINDRE -->
+    <div class="modal fade own-modal" tabindex="-1" role="dialog" aria-hidden="true" id="register-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-12 text-center">
+                    <img src="assets/custom/css/svg/user.svg" width="60%" alt="User icon"/><br>
+                    <h4 class="text-black">Formulaire d'adhesion</h4>
+                </div>
+              </div>
+              <form class="register_form" style="margin-top: 20px;">
+                <div class="register_notification text-center"></div>
+                <div class="form-group">
+                  <input type="text" class="form-control nom_register" id="nom_register" placeholder="Votre nom">
+                </div>
+                <div class="form-group">
+                  <select class="form-control old-zone">
+                        <option value="">Votre ancien NEO-ZONE</option>
+                        <option value="1">Chasseur</option>
+                        <option value="2">Pêcheur</option>
+                        <option value="3">Guérisseur</option>
+                        <option value="4">Agriculteur</option>
+                        <option value="5">Mineur</option>
+                  </select>
+                </div>
+                <div class="form-group text-center">
+                    <textarea type="text" class="form-control" name="raison_register" rows="3" id="raison_register" placeholder="Décriver en quelques mots votre motivation à rejoindre ce NEO-ZONE"></textarea>
+                </div>
+                <div class="form-group text-center">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""> J'accepte les termes et conditions du site</label>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-info text-center">JOINDRE</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block javascripts %}
     <script src="{{ asset('assets/web/assets/jquery/jquery.min.js')}}"></script>
     <script src="{{ asset('assets/popper/popper.min.js')}}"></script>
@@ -747,7 +766,120 @@
     <script type="text/javascript">
         $(function() {
             new WOW().init();
+
+            'use strict';
+
+            var response      = new Array();
+
+            /* AUTH */
+            var $loginForm                  = $('.login_form'),
+                auth_notificationClass      = 'login_notification';
+
+            $loginForm.submit(function(e) {
+                e.preventDefault();
+
+                var login    = $('.auth_login').val(),
+                    mdp    = $('.auth_mdp').val();
+
+                if (validateLoginAuth(login, mdp) == true) {
+                    var data = {
+                        'action'    : 'login',
+                        'login'     : login,
+                        'mdp'       : mdp
+                    }
+                    $.post('_u5fd/auth/auth.login.php', data, function(Dataresponses) {
+                        console.log(Dataresponses);
+                        if (Dataresponses.error != undefined) {
+                            notificationShow_class(Dataresponses, auth_notificationClass, true, null);
+                        } else if (Dataresponses.success != undefined) {
+                            notificationShow_class(Dataresponses, auth_notificationClass, true, 'profile');
+                        } else {
+                            response.error = "Une erreur est survenue pendant la connexion.<br> Veuillez réessayer plus tard s'il vous plait";
+                            notificationShow_class(response, auth_notificationClass, true, null);
+                        }
+                    });
+                } else {
+                    response.error = form_error['empty_fields'];
+                    notificationShow_class(response, auth_notificationClass, true, null);
+                }
+            });
+
+            /* AVIS */
+            var $loginAvis              = $('.form_avis'),
+                avis_notificationClass  = 'avis_notification';
+
+            $loginAvis.submit(function(e) {
+                e.preventDefault();
+
+                var nom             = $('.nom_avis').val(),
+                    neo_zone        = $('.neo_zone_avis').val(),
+                    message         = $('.message_avis').val();
+
+                if (nom != "" || neo_zone != "" || message != "") {
+                    var data = {
+                        'action'    : 'avis',
+                        'nom'       : nom,
+                        'neo_zone'  : neo_zone,
+                        'message'   : message
+                    }
+                    $.post('_u5fd/auth/auth.login.php', data, function(Dataresponses) {
+                        console.log(Dataresponses);
+                        if (Dataresponses.error != undefined) {
+                            notificationShow_class(Dataresponses, avis_notificationClass, true, null);
+                        } else if (Dataresponses.success != undefined) {
+                            notificationShow_class(Dataresponses, avis_notificationClass, true, 'profile');
+                        } else {
+                            response.error = "Une erreur est survenue pendant la connexion.<br> Veuillez réessayer plus tard s'il vous plait";
+                            notificationShow_class(response, avis_notificationClass, true, null);
+                        }
+                    });
+                } else {
+                    response.error = form_error['empty_fields'];
+                    notificationShow_class(response, avis_notificationClass, true, null);
+                }
+            });
+            
+            /* REGISTER */
+            var $register_form           = $('.register_form'),
+                register_notification   = 'register_notification',
+                nom_register            = $('.nom_register'),
+                old_zone                = $('.old-zone'),
+                raison_register         = $('.raison_register'),
+                checkbox                = $('.checkbox');
+
+            $register_form.submit(function(e) {
+                e.preventDefault();
+
+                var nom             = $('.nom').val(),
+                    neo_zone        = $('.old_zone').val(),
+                    raison          = $('.raison_register').val(),
+                    condition       = $('.checkbox').val();
+
+                if (nom != "" || neo_zone != "" || raison != "") {
+                    var data = {
+                        'action'    : 'avis',
+                        'nom'       : nom,
+                        'neo_zone'  : neo_zone,
+                        'raison'    : raison
+                    }
+                    $.post('_u5fd/auth/auth.login.php', data, function(Dataresponses) {
+                        console.log(Dataresponses);
+                        if (Dataresponses.error != undefined) {
+                            notificationShow_class(Dataresponses, avis_notificationClass, true, null);
+                        } else if (Dataresponses.success != undefined) {
+                            notificationShow_class(Dataresponses, avis_notificationClass, true, 'profile');
+                        } else {
+                            response.error = "Une erreur est survenue pendant la connexion.<br> Veuillez réessayer plus tard s'il vous plait";
+                            notificationShow_class(response, avis_notificationClass, true, null);
+                        }
+                    });
+                } else {
+                    response.error = form_error['empty_fields'];
+                    notificationShow_class(response, avis_notificationClass, true, null);
+                }
+            });
         });
+
     </script>
 {% endblock %}
 

@@ -15,6 +15,6 @@ security:
 
     firewalls:
         main:
-            pattern:    ^/admin
+            pattern:    ^/page/admin
             http_basic: ~
             provider: our_db_provider

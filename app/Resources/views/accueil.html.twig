@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.7.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+  <meta name="description" content="Web Page Maker Description">
+  <title>accueil</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons/mobirise-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/tether/tether.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-reboot.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('assets/custom/css/animate.min.css')}}">
+        <link rel="stylesheet" href="{{ asset('assets/dropdown/css/style.css')}}">
+        <link rel="stylesheet" href="{{ asset('assets/socicon/css/styles.css')}}">
+        <link rel="stylesheet" href="{{ asset('assets/theme/css/style.css')}}">
+        <link rel="stylesheet" href="{{ asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
+
+    {% endblock %}
+</head>
+<body>
+    <!-- Twig NAVIGATION -->
+    {% block menu %}
+        <section class="menu cid-qRad6v6PHs" once="menu" id="menu2-0">
+            <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="menu-logo">
+                    <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="javascript:;">
+                            <img src="{{ asset('assets/images/logo.png')}}" alt="accueil" style="height: 3.8rem;">
+                        </a>
+                    </span>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href=""> Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4 active" href="{{ path('page_route', {'page':'chasseur'}) }}"> Chasseurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'pecheur'}) }}"> Pêcheurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'guerisseur'}) }}"> Guérisseurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'batisseur'}) }}"> Bâtisseurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'agriculteur'}) }}"> Agriculteurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'mineur'}) }}"> Mineurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'mineur'}) }}">
+                                <span class="mbrib-search mbr-iconfont mbr-iconfont-btn"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-sm btn-primary display-4 join-btn" href="tel:+1-234-567-8901">
+                            <span class="mbrib-login mbr-iconfont mbr-iconfont-btn"></span>
+                            REJOINDRE
+                        </a>
+                    </div>
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-sm btn-primary display-4" data-toggle="modal" data-target="#login-modal"> ECHANGE </a>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        <!-- <section class="engine"><a href="https://mobirise.ws/n">mobile website creator app</a></section> -->
+
+        <section class="menu cid-qRad7rIgD2" once="menu" id="menu2-1">
+            <!-- NAVIGATION -->
+            <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="menu-logo">
+                    <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="javascript:;">
+                            <img src="{{ asset('assets/images/logo-chasseur.png')}}" alt="Mobirise" style="height: 3.8rem;">
+                        </a>
+                    </span>
+                    </div>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{{ path('homepage') }}"> Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4 active" href="{{ path('page_route', {'page':'chasseur'}) }}"> Chasseurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'pecheur'}) }}"> Pêcheurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'guerisseur'}) }}"> Guérisseurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4"href="{{ path('page_route', {'page':'batisseur'}) }}"> Bâtisseurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'agriculteur'}) }}"> Agriculteurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'mineur'}) }}"> Mineurs</a>
+                        </li>
+                        <!-- <li class="nav-item dropdown open">
+                            <a class="nav-link link text-black dropdown-toggle display-4" href="mineurs.html" data-toggle="dropdown-submenu" aria-expanded="true" data-toggle="modal" data-target="#login-modal">
+                                <span class="mbrib-user mbr-iconfont mbr-iconfont-btn"></span> Rakoto
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="text-black dropdown-item display-4" href="mineurs.html">Se déconnecter</a>
+                            </div>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="javascript:;" aria-expanded="true" data-toggle="modal" data-target="#login-modal">
+                                <span class="mbrib-user mbr-iconfont mbr-iconfont-btn"></span> Se connecter
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="href="{{ path('page_route', {'page':'mineur'}) }}"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'mineur'}) }}">
+                                <span class="mbrib-search mbr-iconfont mbr-iconfont-btn"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-sm btn-primary display-4" href="tel:+1-234-567-8901"> REJOINDRE </a>
+                    </div>
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-sm btn-primary display-4"> ECHANGE </a>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    {% endblock %}
+
+    <!-- HERO ACCUEIL -->
+    <section class="carousel slide cid-qRd60sy45r" data-interval="false" id="slider1-2u">
+        <div class="full-screen">
+            <div class="mbr-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="false" data-interval="false">
+                <ol class="carousel-indicators">
+                    <li data-app-prevent-settings="" data-target="#slider1-2u" class=" active" data-slide-to="0"></li>
+                    <li data-app-prevent-settings="" data-target="#slider1-2u" data-slide-to="1"></li>
+                    <li data-app-prevent-settings="" data-target="#slider1-2u" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="background-image: url(assets/images/1.jpg);">
+                        <div class="container container-slide">
+                            <div class="image_wrapper">
+                                <div class="mbr-overlay"></div>
+                                <img src="assets/images/1.jpg">
+                                <div class="carousel-caption justify-content-center">
+                                    <div class="col-10 align-center">
+                                        <h2 class="mbr-fonts-style display-1">Diapositive Plein Écran</h2>
+                                        <p class="lead mbr-text mbr-fonts-style display-5">Choisissez parmi une vaste sélection de blocs pré-fabriqués en plein écran, d'images, d'effet parallaxe, d'arrière-plans vidéo, d'en-tête et plus encore.</p>
+                                        <div class="mbr-section-btn" buttons="0">
+                                            <a class="btn  btn-success display-4" href="https://mobirise.com">Pour WINDOWS</a> 
+                                            <a class="btn  btn-white-outline display-4" href="https://mobirise.com">Pour MAC</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="https://www.youtube.com/watch?v=fwkKc6M60-0">
+                        <div class="mbr-overlay"></div>
+                        <div class="container container-slide">
+                            <div class="image_wrapper">
+                                <img src="assets/images/2.jpg" style="opacity: 0;">
+                                <div class="carousel-caption justify-content-center">
+                                    <div class="col-10 align-left">
+                                        <h2 class="mbr-fonts-style display-1">Diapositive Vidéo</h2>
+                                        <p class="lead mbr-text mbr-fonts-style display-5">Diapositive avec vidéo Youtube en fond et superposition de couleur. Le titre et le texte sont alignés à gauche.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(assets/images/3.jpg);">
+                        <div class="container container-slide">
+                            <div class="image_wrapper">
+                                <div class="mbr-overlay"></div>
+                                <img src="assets/images/3.jpg">
+                                <div class="carousel-caption justify-content-center">
+                                    <div class="col-10 align-right">
+                                        <h2 class="mbr-fonts-style display-1">DIAPOSITIVE IMAGE</h2>
+                                        <p class="lead mbr-text mbr-fonts-style display-5">Choisissez parmi une vaste sélection de blocs pré-fabriqués en plein écran, d'images, d'effet parallaxe, d'arrière-plans vidéo, d'en-tête et plus encore.</p>
+                                        <div class="mbr-section-btn" buttons="0">
+                                            <a class="btn btn-info display-4" href="https://mobirise.com">Pour WINDOWS</a> 
+                                            <a class="btn  btn-white-outline display-4" href="https://mobirise.com">Pour MAC</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#slider1-2u">
+                    <span aria-hidden="true" class="mbri-left mbr-iconfont"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a data-app-prevent-settings="" class="carousel-control carousel-control-next" role="button" data-slide="next" href="#slider1-2u">
+                    <span aria-hidden="true" class="mbri-right mbr-iconfont"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- A PROPOS -->
+    <section class="mbr-section content4 cid-qRd62h2ggG" id="content4-2v">
+        <div class="container">
+            <div class="media-container-row">
+                <div class="title col-12 col-md-8">
+                    <h2 class="align-center pb-3 mbr-fonts-style display-2"> A propos</h2>
+                    <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
+                        Façonnez votre futur projet web avec une conception précise et affinez les fonctions codées.
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ZONE -->
+    <section class="features3 cid-qRd6f4uTLu" id="features3-2x">
+        <div class="container">
+            <div class="media-container-row">
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="assets/images/01.jpg" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7">Chasseurs</h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Mobirise is an easy website builder - just drop site elements to your page, add content and style it to look the way you like.
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center">
+                            <a href="https://mobirise.com" class="btn btn-primary display-4"> Explorer</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="assets/images/02.jpg" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7"> Pêcheurs</h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                All sites you make with Mobirise are mobile-friendly. You don't have to create a special mobile version of your site.
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center">
+                            <a href="https://mobirise.com" class="btn btn-primary display-4"> Explorer</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 col-12 col-md-6 col-lg-4">
+                    <div class="card-wrapper">
+                        <div class="card-img">
+                            <img src="assets/images/03.jpg" alt="Mobirise">
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title mbr-fonts-style display-7"> Guérisseurs</h4>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                Mobirise offers many site blocks in several themes, and though these blocks are pre-made, they are flexible.
+                            </p>
+                        </div>
+                        <div class="mbr-section-btn text-center">
+                            <a href="https://mobirise.com" class="btn btn-primary display-4"> Explorer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ASTUCES ZGI -->
+    <section class="mbr-section content4 cid-qRd65EZkwe" id="content4-2w">
+        <div class="container">
+            <div class="media-container-row">
+                <div class="title col-12 col-md-8">
+                    <h2 class="align-center pb-3 mbr-fonts-style display-2"> Astuces en ZGI</h2>
+                    <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
+                        Façonnez votre futur projet web avec une conception précise et affinez les fonctions codées.
+                    </h3>
+                    <div class="mbr-section-btn align-center py-4">
+                        <a class="btn btn-secondary display-4" href="https://mobirise.com">LES ZONES ROUGES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  -->
+    <section class="features16 cid-qRd9DHQNok" id="features16-32">
+        <div class="container align-center">
+            <h2 class="pb-3 mbr-fonts-style mbr-section-title display-2">LA TEAM TORC-ZONE</h2>
+            <h3 class="pb-5 mbr-section-subtitle mbr-fonts-style mbr-light display-5">
+                Click any icon or text to edit or style it. Click blue "Gear" icon in the top right corner to hide/show text and change the block and cards background, icons count and other.
+            </h3>
+            <div class="row media-row">
+            <div class="team-item col-lg-3 col-md-6">
+                <div class="item-image">
+                    <img src="assets/images/razafimandimby-niaina-michael-geek-inside-madagascar-510x510.jpg" alt="" title="">
+                </div>
+                <div class="item-caption py-3">
+                    <div class="item-name px-2">
+                        <p class="mbr-fonts-style display-5"> Balzac</p>
+                    </div>
+                    <div class="item-role px-2">
+                        <p>Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="team-item col-lg-3 col-md-6">
+                <div class="item-image">
+                    <img src="assets/images/randriamitsiry-lovasoa-gabriel-geek-inside-madagascar-510x510.jpg" alt="" title="">
+                </div>
+                <div class="item-caption py-3">
+                    <div class="item-name px-2">
+                        <p class="mbr-fonts-style display-5"> Jess</p>
+                    </div>
+                    <div class="item-role px-2">
+                        <p>Commércial</p>
+                    </div>
+                </div>
+                </div>
+                <div class="team-item col-lg-3 col-md-6">
+                    <div class="item-image">
+                        <img src="assets/images/randrianarijaona-rija-nifaliana-geek-inside-madagascar-510x510.jpg" alt="" title="">
+                    </div>
+                    <div class="item-caption py-3">
+                        <div class="item-name px-2">
+                            <p class="mbr-fonts-style display-5"> Jarix</p>
+                        </div>
+                        <div class="item-role px-2">
+                            <p>Webmaster</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-item col-lg-3 col-md-6">
+                    <div class="item-image">
+                        <img src="assets/images/razafimandimby-niaina-abel-geek-inside-madagascar-510x510.jpg" alt="" title="">
+                    </div>
+                    <div class="item-caption py-3">
+                        <div class="item-name px-2">
+                            <p class="mbr-fonts-style display-5"> Leériy</p>
+                        </div>
+                        <div class="item-role px-2">
+                            <p>Comptable</p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mbr-section content8 cid-qRda5WXRHp" id="content8-33">
+        <div class="container">
+            <div class="media-container-row title">
+                <div class="col-12 col-md-8">
+                    <div class="mbr-section-btn align-center">
+                        <a class="btn btn-primary display-4" href="https://mobirise.com">EFFECTUER UN ECHANGE</a>
+                        <a class="btn btn-black-outline display-4" href="https://mobirise.com">REJOINDRE UN NEO-ZONES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- twig footer -->
+    <section class="footer3 cid-qRdcjLn2jn mbr-reveal" id="footer3-34">
+        <div class="container">
+            <div class="media-container-row content">
+                <div class="col-md-2 col-sm-4">
+                    <div class="mb-3 img-logo">
+                        <a href="https://mobirise.com/">
+                            <img src="assets/images/logo2.png" alt="Mobirise">
+                        </a>
+                    </div>
+                    <p class="mbr-fonts-style foot-logo display-7">
+                        MOBIRISE
+                    </p>
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <p class="mb-4 mbr-fonts-style foot-title display-7">
+                        RECENT NEWS
+                    </p>
+                    <p class="mbr-text mbr-links-column mbr-fonts-style display-7">
+                        <a href="#" class="text-black">About us</a> <br>
+                        <a href="#" class="text-black">Services</a> <br>
+                        <a href="#" class="text-black">Selected Work</a> <br>
+                        <a href="#" class="text-black">Get In Touch</a> <br>
+                        <a href="#" class="text-black">Careers</a>
+                    </p>
+                </div>
+                <div class="col-md-3 col-sm-4">
+                    <p class="mb-4 mbr-fonts-style foot-title display-7">
+                        CATEGORIES
+                    </p>
+                    <p class="mbr-text mbr-fonts-style mbr-links-column display-7">
+                        <a href="#" class="text-black">Business</a> <br>
+                        <a href="#" class="text-black">Design</a> <br>
+                        <a href="#" class="text-black">Real life</a> <br>
+                        <a href="#" class="text-black">Science</a> <br>
+                        <a href="#" class="text-black">Tech</a>
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <p class="mb-4 mbr-fonts-style foot-title display-7">
+                        SUBSCRIBE
+                    </p>
+                    <p class="mbr-text form-text mbr-fonts-style display-7">Slogan du site</p>
+                    <div class="media-container-column" data-form-type="formoid">
+                        <div data-form-alert="" hidden="" class="align-center">
+                            Thanks for filling out the form!
+                        </div>
+                        <form class="form-inline" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form">
+                            <input type="hidden" value="CXPSoiZNPPs4XbPW5VEjfwIDmTpfTmpkr5cUApuutqLcdoaIp2zl9bex44A4P9YsLvdBJt4iSqDxnxDZGfKIBcpSTYyPSPKd43yac3S04HPzEjCunlSsDMqxX2oVMYT7" data-form-email="true">
+                            <div class="form-group">
+                                <input type="email" class="form-control input-sm input-inverse my-2" name="email" required="" data-form-field="Email" placeholder="Email" id="email-footer3-34">
+                            </div>
+                            <div class="input-group-btn m-2">
+                                <button href="" class="btn btn-primary display-4" type="submit" role="button">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-lower">
+                <div class="media-container-row">
+                    <div class="col-sm-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="media-container-row">
+                    <div class="col-sm-6 copyright">
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            © Copyright 2017 Mobirise - All Rights Reserved
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="social-list align-right">
+                            <div class="soc-item">
+                                <a href="https://twitter.com/mobirise" target="_blank">
+                                    <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                                    <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                                    <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="https://instagram.com/mobirise" target="_blank">
+                                    <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
+                                    <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                            <div class="soc-item">
+                                <a href="https://www.behance.net/Mobirise" target="_blank">
+                                    <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- twig SCRIPTS -->
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/popper/popper.min.js"></script>
+    <script src="assets/tether/tether.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/dropdown/js/script.min.js"></script>
+    <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+    <script src="assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
+    <script src="assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+    <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+    <script src="assets/formoid/formoid.min.js"></script>
+    <script src="assets/slidervideo/script.js"></script>
+
+    <div id="scrollToTop" class="scrollToTop mbr-arrow-up">
+        <a style="text-align: center;"><i></i></a>
+    </div>
+    <!-- <input name="animation" type="hidden"> -->
+  </body>
+</html>

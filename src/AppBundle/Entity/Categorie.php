@@ -11,6 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="categorie")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CategorieRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Categorie
 {
@@ -44,6 +45,29 @@ class Categorie
      * @ORM\Column(name="photo", type="string")
      */
     private $photo;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Leader")
+     */
+    private $leader;
+
+    /**
+     * @return Leader
+     */
+    public function getLeader()
+    {
+        return $this->leader;
+    }
+
+    /**
+     * @param Leader $leader
+     * @return Categorie
+     */
+    public function setLeader($leader)
+    {
+        $this->leader = $leader;
+        return $this;
+    }
 
     /**
      * @return string

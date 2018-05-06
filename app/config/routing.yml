@@ -5,8 +5,8 @@ app:
 easy_admin_bundle:
     resource: "@EasyAdminBundle/Controller/AdminController.php"
     type:     annotation
-    prefix:   /admin
+    prefix:   /page/admin
 
 user_registration:
-    path:     /register
+    path:     /user/register
     defaults: { _controller: AppBundle:Registration:register }

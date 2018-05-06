@@ -75,7 +75,7 @@ easy_admin:
             class: AppBundle\Entity\Categorie
             form:
                 fields:
-                 - { property: 'photo', type: "file", type_options: { data_class: null }, label: "Banner"}
+                  - { property: 'photo', type: "file", type_options: { data_class: null }, label: "Banner"}
                   - { property: 'designation', label: "Designation"}
                   - { property: 'description', label: "Description"}
                   - { property: 'produitDescription', label: "Description des produits en globales"}
@@ -83,7 +83,7 @@ easy_admin:
                   - { property: "zones", label: "Zones", type: collection , type_options: {entry_type: 'AppBundle\Form\ZoneType', allow_add: true, allow_delete: true, by_reference: false}}
             list:
                 fields:
-                 - { property: 'photo', type: "image", base_path: "/uploads/categorie"}
+                  - { property: 'photo', type: "image", base_path: "/uploads/categorie"}
                   - { property: 'designation', label: "Designation"}
                   - { property: 'description', label: "Description"}
                   - { property: 'produitDescription', label: "Description des produits en globales"}
@@ -154,12 +154,11 @@ easy_admin:
                   - { property: "photo", type: "file", type_options: {data_class: null}}
             list:
                 fields:
-                  - { property: "photo", type: "image", base_path: "/uploads/temoin" }
+                  - { property: "photo", type: "image", base_path: "/uploads/temoin/" }
                   - { property: "nom" }
                   - { property: "contenu" }
 
         Avis:
-
             class: AppBundle\Entity\Avis
             list:
                 - { property: "nom" }
@@ -169,17 +168,19 @@ easy_admin:
         Leader:
             class: AppBundle\Entity\Leader
             form:
-              - { property: "photo", type: "file", type_options: {data_class: null}}
-              - { property: "nom" }
-              - { property: "fonction" }
-              - { property: "mots"}
-              - { property: "categorie"}
+              fields :
+                - { property: "photo", type: "file", type_options: {data_class: null}}
+                - { property: "nom" }
+                - { property: "fonction" }
+                - { property: "mots"}
+                - { property: "categorie"}
             list:
-              - { property: "photo", type: "image",base_path: "/uploads/leader"}
-              - { property: "nom" }
-              - { property: "fonction" }
-              - { property: "mots"}
-              - { property: "categorie"}
+              fields:
+                - { property: "photo", type: "image", base_path: "/uploads/leader/"}
+                - { property: "nom" }
+                - { property: "fonction" }
+                - { property: "mots"}
+                - { property: "categorie"}
 
 
     site_name: 'TROC-ZONE <em style="font-size: 80%;">Administration</em>'
