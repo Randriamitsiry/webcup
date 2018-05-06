@@ -1,20 +1,11 @@
 .nav-item .active {
-	color: #435847!important;
-	border-bottom: 2px solid #435847!important;
+	color: #F0C008!important;
+	border-bottom: 2px solid #F0C008!important;
 }
 
-#navbarSupportedContent .navbar-buttons .join-echange {
-	background: #435847!important;
-	border-color: #435847 !important;
-}
-#navbarSupportedContent .navbar-buttons .join-btn-plus {
-	background-color: transparent!important;
-    border-color: #435847 !important;
-    color: black!important;
-}
-#navbarSupportedContent .navbar-buttons .join-btn-plus:hover {
-	background-color: #435847!important;
-    color: white!important;
+#navbarSupportedContent .navbar-buttons .btn {
+	background: #F0C008!important;
+	border-color: #F0C008 !important;
 }
 
 #header1-k .btn {
@@ -28,7 +19,7 @@
 }
 
 .title .pb-3, .media-content h3 {
-	color: #435847!important;
+	color: #F0C008!important;
 }
 
 .title .pb-3-border {
@@ -37,7 +28,7 @@
 	height: 3px;
 	top: 5px;
 	margin: auto;
-	background: #435847;
+	background: #F0C008;
 }
 
 
@@ -47,7 +38,7 @@
 
 /* Back to Top */
 .mbr-arrow-up a {
-    background: rgba(57, 74, 51, 0.8)!important;
+    background: rgba(227, 183, 3, 0.8)!important;
 }
 
 .timeline1 {
@@ -55,24 +46,24 @@
 }
 
 .timeline-element .iconBackground, .cid-qRbW0bIY7b .separline:before {
-	background-color: #435847;
+	background-color: #F0C008;
 }
 
 /* CTA */
 .cta .btn {
 	background-color: #FFFFFF!important;
-    border-color: #435847 !important;
+    border-color: #F0C008 !important;
     color: black!important;
 }
 #header1-k .btn:hover, .cta .btn:hover {
-	background-color: #435847!important;
-    border-color: #435847 !important;
+	background-color: #F0C008!important;
+    border-color: #F0C008 !important;
     color: white!important;
 }
 
 /* FOOTER */
 .cid-qRaGMZfHcJ {
-    background-color: #435847;
+    background-color: #F0C008;
 }
 
 .foot-title {
@@ -88,4 +79,8 @@
 /* FOOTER COPYRIGHR & FOOTER SOCIAL ICON */
 .footer-lower .copyright .mbr-text, .footer-lower .social-list .mbr-iconfont-social {
 	color: white!important;
+}
+
+.cid-qRdkVlXJYw .counter-container ol li:before {
+    background: #F0C008;
 }

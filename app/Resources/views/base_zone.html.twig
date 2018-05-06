@@ -1,38 +1,40 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
-  <!-- Site made with Mobirise Website Builder v4.7.1, javascript:; -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v4.7.1, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="{{ asset('assetsimages/logo-chasseur.png')}}" type="image/x-icon">
-  <meta name="description" content="Website Creator Description">
+    <!-- Site made with Mobirise Website Builder v4.7.1, javascript:; -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.7.1, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="{{ asset('assetsimages/logo-chasseur.png') }}" type="image/x-icon">
+    <meta name="description" content="Website Creator Description">
     <title>{% block title %}{{ page | capitalize }}{% endblock %} | TROC-ZONE</title>
-{% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons/mobirise-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/tether/tether.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-reboot.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/as-pie-progress/css/progress.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/custom/css/animate.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/dropdown/css/style.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/socicon/css/styles.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/theme/css/style.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/gallery/style.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('assets/custom/css/custom.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/custom/css/custom.chasseur.css')}}">
-{% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons/mobirise-icons.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/tether/tether.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-grid.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-reboot.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/as-pie-progress/css/progress.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/custom/css/animate.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/dropdown/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/socicon/css/styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/theme/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/gallery/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/mobirise/css/mbr-additional.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ asset('assets/custom/css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/custom/css/custom.chasseur.css') }}">
+    {% endblock %}
 
 </head>
 <body>
 {% block menu %}
     <section class="menu cid-qRad6v6PHs" once="menu" id="menu2-0">
         <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -44,7 +46,7 @@
                 <div class="navbar-brand">
                     <span class="navbar-logo">
                         <a href="javascript:;">
-                            <img src="{{ asset('assets/images/logo-'~page~'.png')}}" style="height: 3.8rem;">
+                            <img src="{{ asset('assets/images/logo.png') }}" style="height: 3.8rem;">
                         </a>
                     </span>
                 </div>
@@ -55,34 +57,43 @@
                         <a class="nav-link link text-black display-4" href=""> Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4 active" href="{{ path('page_route', {'page':'chasseur'}) }}"> Chasseurs</a>
+                        <a class="nav-link link text-black display-4 active"
+                           href="{{ path('page_route', {'page':'chasseur'}) }}"> Chasseurs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'pecheur'}) }}"> Pêcheurs</a>
+                        <a class="nav-link link text-black display-4"
+                           href="{{ path('page_route', {'page':'pecheur'}) }}"> Pêcheurs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'guerisseur'}) }}"> Guérisseurs</a>
+                        <a class="nav-link link text-black display-4"
+                           href="{{ path('page_route', {'page':'guerisseur'}) }}"> Guérisseurs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'batisseur'}) }}"> Bâtisseurs</a>
+                        <a class="nav-link link text-black display-4"
+                           href="{{ path('page_route', {'page':'batisseur'}) }}"> Bâtisseurs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'agriculteur'}) }}"> Agriculteurs</a>
+                        <a class="nav-link link text-black display-4"
+                           href="{{ path('page_route', {'page':'agriculteur'}) }}"> Agriculteurs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'mineur'}) }}"> Mineurs</a>
+                        <a class="nav-link link text-black display-4"
+                           href="{{ path('page_route', {'page':'mineur'}) }}"> Mineurs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'mineur'}) }}">
+                        <a class="nav-link link text-black display-4"
+                           href="{{ path('page_route', {'page':'mineur'}) }}">
                             <span class="mbrib-search mbr-iconfont mbr-iconfont-btn"></span>
                         </a>
                     </li>
                 </ul>
                 <div class="navbar-buttons mbr-section-btn">
-                    <a class="btn btn-sm btn-primary display-4 join-btn" data-toggle="modal" data-target="#register-modal"> REJOINDRE </a>
+                    <a class="btn btn-sm btn-primary display-4 join-btn" data-toggle="modal"
+                       data-target="#register-modal"> REJOINDRE </a>
                 </div>
                 <div class="navbar-buttons mbr-section-btn">
-                    <a class="btn btn-sm btn-primary display-4" href="{{ path('page_route', {'page':'echange'}) }}"> ECHANGE </a>
+                    <a class="btn btn-sm btn-primary display-4" href="{{ path('page_route', {'page':'echange'}) }}">
+                        ECHANGE </a>
                 </div>
             </div>
         </nav>
@@ -93,7 +104,9 @@
     <section class="menu cid-qRad7rIgD2" once="menu" id="menu2-1">
         <!-- NAVIGATION -->
         <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -101,11 +114,11 @@
                     <span></span>
                 </div>
             </button>
-            <div class="menu-logo">
+            <div class="menu-abri">
                 <div class="navbar-brand">
-                    <span class="navbar-logo">
+                    <span class="navbar-abri">
                         <a href="javascript:;">
-                            <img src="{{ asset('assets/images/logo-chasseur.png')}}" style="height: 3.8rem;">
+                            <img src="{{ asset('assets/images/abri-chasseur.png') }}" style="height: 3.8rem;">
                         </a>
                     </span>
                 </div>
@@ -116,22 +129,28 @@
                         <a class="nav-link link text-black display-4" href="{{ path('homepage') }}"> Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4 active" href="{{ path('page_route', {'page':'chasseur'}) }}"> Chasseurs</a>
+                        <a class="nav-link link text-black display-4 active"
+                           href="{{ path('page_route', {'page':'chasseur'}) }}"> Chasseurs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'pecheur'}) }}"> Pêcheurs</a>
+                        <a class="nav-link link text-black display-4"
+                           href="{{ path('page_route', {'page':'pecheur'}) }}"> Pêcheurs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'guerisseur'}) }}"> Guérisseurs</a>
+                        <a class="nav-link link text-black display-4"
+                           href="{{ path('page_route', {'page':'guerisseur'}) }}"> Guérisseurs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4"href="{{ path('page_route', {'page':'batisseur'}) }}"> Bâtisseurs</a>
+                        <a class="nav-link link text-black display-4"
+                           href="{{ path('page_route', {'page':'batisseur'}) }}"> Bâtisseurs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'agriculteur'}) }}"> Agriculteurs</a>
+                        <a class="nav-link link text-black display-4"
+                           href="{{ path('page_route', {'page':'agriculteur'}) }}"> Agriculteurs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'mineur'}) }}"> Mineurs</a>
+                        <a class="nav-link link text-black display-4"
+                           href="{{ path('page_route', {'page':'mineur'}) }}"> Mineurs</a>
                     </li>
                     <!-- <li class="nav-item dropdown open">
                         <a class="nav-link link text-black dropdown-toggle display-4" href="mineurs.html" data-toggle="dropdown-submenu" aria-expanded="true" data-toggle="modal" data-target="#login-modal">
@@ -142,24 +161,29 @@
                         </div>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="javascript:;" aria-expanded="true" data-toggle="modal" data-target="#login-modal">
+                        <a class="nav-link link text-black display-4" href="javascript:;" aria-expanded="true"
+                           data-toggle="modal" data-target="#login-modal">
                             <span class="mbrib-user mbr-iconfont mbr-iconfont-btn"></span> Se connecter
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="href="{{ path('page_route', {'page':'mineur'}) }}"></a>
+                        <a class="nav-link link text-black display-4"
+                           href="href="{{ path('page_route', {'page':'mineur'}) }}"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link text-black display-4" href="{{ path('page_route', {'page':'mineur'}) }}">
+                        <a class="nav-link link text-black display-4"
+                           href="{{ path('page_route', {'page':'mineur'}) }}">
                             <span class="mbrib-search mbr-iconfont mbr-iconfont-btn"></span>
                         </a>
                     </li>
                 </ul>
                 <div class="navbar-buttons mbr-section-btn">
-                    <a class="btn btn-sm btn-primary display-4 join-btn" data-toggle="modal" data-target="#register-modal"> REJOINDRE </a>
+                    <a class="btn btn-sm btn-primary display-4 join-btn" data-toggle="modal"
+                       data-target="#register-modal"> REJOINDRE </a>
                 </div>
                 <div class="navbar-buttons mbr-section-btn">
-                    <a class="btn btn-sm btn-primary display-4" href="{{ path('page_route', {'page':'echange'}) }}"> ECHANGE </a>
+                    <a class="btn btn-sm btn-primary display-4" href="{{ path('page_route', {'page':'echange'}) }}">
+                        ECHANGE </a>
                 </div>
             </div>
         </nav>
@@ -167,7 +191,7 @@
 {% endblock %}
 {% block hero %}
     <section class="header1 cid-qRayCAK3u4 mbr-fullscreen mbr-parallax-background" id="header1-k">
-        <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"> </div>
+        <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"></div>
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="mbr-white col-md-10">
@@ -175,8 +199,8 @@
                     <h2 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2 wow fadeInUp">
                         {% if categorie %}
                             "{{ categorie.description }}"
-                            {% else %}
-                                "Categorie encore vide"
+                        {% else %}
+                            "Categorie encore vide"
                         {% endif %}
                     </h2>
                     <p class="mbr-text align-center pb-3 mbr-fonts-style display-7">
@@ -197,12 +221,14 @@
         <div class="container">
             <div class="media-container-row wow slideInUp">
                 <div class="title col-12 col-md-8">
-                    <h1 class="align-center pb-3 mbr-fonts-style display-1"> A propos <div class="pb-3-border"></div> </h1>
+                    <h1 class="align-center pb-3 mbr-fonts-style display-1"> A propos
+                        <div class="pb-3-border"></div>
+                    </h1>
                     <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
                         {% if categorie %}
                             "{{ categorie.apropos }}"
-                            {% else %}
-                                "Categorie encore vide"
+                        {% else %}
+                            "Categorie encore vide"
                         {% endif %}
                     </h2>
                 </div>
@@ -213,109 +239,113 @@
 {% endblock %}
 
 {% block competences %}
-<!-- COMPETENCES NEO-ZONE -->
-<section class="timeline1 cid-qRbW0bIY7b" id="timeline1-2k">
-    <div class="media-container-row">
-        <div class="title col-12 col-md-8">
-            <h1 class="align-center pb-3 mbr-fonts-style display-1"> Compétences <div class="pb-3-border"></div> </h1>
+    <!-- COMPETENCES NEO-ZONE -->
+    <section class="timeline1 cid-qRbW0bIY7b" id="timeline1-2k">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Compétences
+                    <div class="pb-3-border"></div>
+                </h1>
+            </div>
         </div>
-    </div>
-    <div class="container align-center">
-        <div class="container timelines-container" mbri-timelines="">
-        	{% if zone %}
-        		 {% for service in zone[0].services %}
-	                {% if loop.index is divisible by(2) %}
-	                    <div class="row timeline-element reverse separline">
-	                        <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
-	                            <div class="time-line-date-content wow fadeInRight">
-	                                <img src="{{ asset('uploads/service/'~service.photo~'')}}" class="img-fluid">
-	                            </div>
-	                        </div>
-	                        <span class="iconBackground"></span>
-	                        <div class="col-xs-12 col-md-6 align-right">
-	                            <div class="timeline-text-content wow fadeInLeft">
-	                                <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-	                                    {{ service.designation }}
-	                                </h4>
-	                                <p class="mbr-timeline-text mbr-fonts-style display-7">
-	                                   {{ service.details }}
-	                                    <a href="javascript:;">En savoir plus ...</a>
-	                                </p>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    {% else %}
-	                        <div class="row timeline-element  separline">
-	                            <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
-	                                <div class="time-line-date-content wow fadeInLeft">
-	                                    <img src="{{ asset('uploads/service/'~service.photo~'')}}" class="img-fluid">
-	                                </div>
-	                            </div>
-	                            <span class="iconBackground"></span>
-	                            <div class="col-xs-12 col-md-6 align-left ">
-	                                <div class="timeline-text-content wow fadeInRight">
-	                                    <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-	                                        {{ service.designation }}
-	                                    </h4>
-	                                    <p class="mbr-timeline-text mbr-fonts-style display-7">
-	                                        {{ service.details }} <br><br>
-	                                        <a href="javascript:void()">En savoir plus ...</a>
-	                                    </p>
-	                                </div>
-	                            </div>
-	                        </div>
-	                {% endif %}
-            	{% endfor %}
-            	{% else %}
-            		"Categorie vide"
-        	{% endif %}
-           
+        <div class="container align-center">
+            <div class="container timelines-container" mbri-timelines="">
+                {% if zone %}
+                    {% for service in zone[0].services %}
+                        {% if loop.index is divisible by(2) %}
+                            <div class="row timeline-element reverse separline">
+                                <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
+                                    <div class="time-line-date-content wow fadeInRight">
+                                        <img src="{{ asset('uploads/service/'~service.photo~'') }}" class="img-fluid">
+                                    </div>
+                                </div>
+                                <span class="iconBackground"></span>
+                                <div class="col-xs-12 col-md-6 align-right">
+                                    <div class="timeline-text-content wow fadeInLeft">
+                                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
+                                            {{ service.designation }}
+                                        </h4>
+                                        <p class="mbr-timeline-text mbr-fonts-style display-7">
+                                            {{ service.details }}
+                                            <a href="javascript:;">En savoir plus ...</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="row timeline-element  separline">
+                                <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
+                                    <div class="time-line-date-content wow fadeInLeft">
+                                        <img src="{{ asset('uploads/service/'~service.photo~'') }}" class="img-fluid">
+                                    </div>
+                                </div>
+                                <span class="iconBackground"></span>
+                                <div class="col-xs-12 col-md-6 align-left ">
+                                    <div class="timeline-text-content wow fadeInRight">
+                                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
+                                            {{ service.designation }}
+                                        </h4>
+                                        <p class="mbr-timeline-text mbr-fonts-style display-7">
+                                            {{ service.details }} <br><br>
+                                            <a href="javascript:void()">En savoir plus ...</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    "Categorie vide"
+                {% endif %}
+
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}
 {% block produits %}
     <!-- PRODUITS NEO-ZONE -->
     <section class="features2 cid-qRaGsiYJta" id="features2-n">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
-                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Produits <div class="pb-3-border"></div> </h1>
+                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Produits
+                    <div class="pb-3-border"></div>
+                </h1>
                 <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-                	{% if categorie %}
-                		{{ categorie.produitDescription }}
-                		{% else %}
-                		"Categorie vide"
-                	{% endif %}
+                    {% if categorie %}
+                        {{ categorie.produitDescription }}
+                    {% else %}
+                        "Categorie vide"
+                    {% endif %}
                     <br>
-               
+
                 </h2>
 
             </div>
         </div>
         <div class="container">
             <div class="media-container-row">
-            	{% if categorie %}
-            		 {% for produit in zone[0].produits %}
-	                <div class="card p-3 col-12 col-md-6 col-lg-4 wow fadeInUp">
-	                    <div class="card-wrapper">
-	                        <div class="card-img">
-	                            <img src="{{ asset('uploads/produit/'~produit.photo)}}">
-	                        </div>
-	                        <div class="card-box">
-	                            <h4 class="card-title pb-3 mbr-fonts-style display-5">{{ produit.designation }}</h4>
-	                            <p class="mbr-text mbr-fonts-style display-7">
-                                    {% if produit %}
-                                        {{ produit.details }}
-                                        <br><a href="#">En savoir plus...</a>
-                                    {% endif %}
-	                                
-	                            </p>
-	                        </div>
-	                    </div>
-	                </div>
-	                {% endfor %}
-            	{% endif %}
-               
+                {% if categorie %}
+                    {% for produit in zone[0].produits %}
+                        <div class="card p-3 col-12 col-md-6 col-lg-4 wow fadeInUp">
+                            <div class="card-wrapper">
+                                <div class="card-img">
+                                    <img src="{{ asset('uploads/produit/'~produit.photo) }}">
+                                </div>
+                                <div class="card-box">
+                                    <h4 class="card-title pb-3 mbr-fonts-style display-5">{{ produit.designation }}</h4>
+                                    <p class="mbr-text mbr-fonts-style display-7">
+                                        {% if produit %}
+                                            {{ produit.details }}
+                                            <br><a href="#">En savoir plus...</a>
+                                        {% endif %}
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
             </div>
         </div>
     </section>
@@ -326,9 +356,11 @@
     <section class="mbr-gallery mbr-slider-carousel cid-qRaZ5RhLEH" id="gallery1-z" style="padding-bottom: 90px;">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
-                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Meilleurs chasseurs de la semaine <div class="pb-3-border"></div> </h1>
+                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Meilleurs {{ page }} de la semaine
+                    <div class="pb-3-border"></div>
+                </h1>
                 <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-                    Façonnez votre futur projet web avec une conception précise et affinez les fonctions codées.Façonnez votre futur projet web avec une conception précise et affinez les fonctions codées.<br>
+                    Rejoignez la compétition chaque semaine<br>
                 </h2>
             </div>
         </div>
@@ -338,32 +370,36 @@
                     <div class="mbr-gallery-layout-default">
                         <div>
                             <div>
-                                <div class="mbr-gallery-item mbr-gallery-item--p1 wow fadeInUp" data-video-url="false" data-tags="Impressionnant">
+                                <div class="mbr-gallery-item mbr-gallery-item--p1 wow fadeInUp" data-video-url="false"
+                                     data-tags="Impressionnant">
                                     <div href="#lb-gallery1-z" data-slide-to="0" data-toggle="modal">
-                                        <img src="{{ asset('assets/images/gallery04.jpg')}}" alt="" title="">
+                                        <img src="{{ asset('assets/images/gallery04.jpg') }}" alt="" title="">
                                         <span class="icon-focus"></span>
-                                        <span class="mbr-gallery-title mbr-fonts-style display-7">Meuilleur chasseur 1</span>
+                                        <span class="mbr-gallery-title mbr-fonts-style display-7">Meuilleur {{ page }} 1</span>
                                     </div>
                                 </div>
-                                <div class="mbr-gallery-item mbr-gallery-item--p1 wow fadeInUp" data-video-url="false" data-tags="Impressionnant">
+                                <div class="mbr-gallery-item mbr-gallery-item--p1 wow fadeInUp" data-video-url="false"
+                                     data-tags="Impressionnant">
                                     <div href="#lb-gallery1-z" data-slide-to="1" data-toggle="modal">
-                                        <img src="{{ asset('assets/images/gallery05.jpg')}}" alt="" title="">
+                                        <img src="{{ asset('assets/images/gallery05.jpg') }}" alt="" title="">
                                         <span class="icon-focus"></span>
-                                        <span class="mbr-gallery-title mbr-fonts-style display-7">Meuilleur chasseur 2<br></span>
+                                        <span class="mbr-gallery-title mbr-fonts-style display-7">Meuilleur {{ page }} 2<br></span>
                                     </div>
                                 </div>
-                                <div class="mbr-gallery-item mbr-gallery-item--p1 wow fadeInUp" data-video-url="false" data-tags="Adaptatif">
+                                <div class="mbr-gallery-item mbr-gallery-item--p1 wow fadeInUp" data-video-url="false"
+                                     data-tags="Adaptatif">
                                     <div href="#lb-gallery1-z" data-slide-to="2" data-toggle="modal">
-                                        <img src="{{ asset('assets/images/gallery06.jpg')}}" alt="" title="">
+                                        <img src="{{ asset('assets/images/gallery06.jpg') }}" alt="" title="">
                                         <span class="icon-focus"></span>
-                                        <span class="mbr-gallery-title mbr-fonts-style display-7">Meuilleur chasseur 3</span>
+                                        <span class="mbr-gallery-title mbr-fonts-style display-7">Meuilleur {{ page }} 3</span>
                                     </div>
                                 </div>
-                                <div class="mbr-gallery-item mbr-gallery-item--p1 wow fadeInUp" data-video-url="false" data-tags="Animé">
+                                <div class="mbr-gallery-item mbr-gallery-item--p1 wow fadeInUp" data-video-url="false"
+                                     data-tags="Animé">
                                     <div href="#lb-gallery1-z" data-slide-to="3" data-toggle="modal">
-                                        <img src="{{ asset('assets/images/gallery07.jpg')}}" alt="" title="">
+                                        <img src="{{ asset('assets/images/gallery07.jpg') }}" alt="" title="">
                                         <span class="icon-focus"></span>
-                                        <span class="mbr-gallery-title mbr-fonts-style display-7">Meuilleur chasseur 4</span>
+                                        <span class="mbr-gallery-title mbr-fonts-style display-7">Meuilleur {{ page }} 4</span>
                                     </div>
                                 </div>
                             </div>
@@ -372,29 +408,32 @@
                     </div>
                 </div>
                 <!-- Lightbox -->
-                <div data-app-prevent-settings="" class="mbr-slider modal fade carousel slide" tabindex="-1" data-keyboard="true" data-interval="false" id="lb-gallery1-z">
+                <div data-app-prevent-settings="" class="mbr-slider modal fade carousel slide" tabindex="-1"
+                     data-keyboard="true" data-interval="false" id="lb-gallery1-z">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-body">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{{ asset('assets/images/gallery04.jpg')}}" alt="" title="">
+                                        <img src="{{ asset('assets/images/gallery04.jpg') }}" alt="" title="">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('assets/images/gallery05.jpg')}}" alt="" title="">
+                                        <img src="{{ asset('assets/images/gallery05.jpg') }}" alt="" title="">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('assets/images/gallery06.jpg')}}" alt="" title="">
+                                        <img src="{{ asset('assets/images/gallery06.jpg') }}" alt="" title="">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="{{ asset('assets/images/gallery07.jpg')}}" alt="" title="">
+                                        <img src="{{ asset('assets/images/gallery07.jpg') }}" alt="" title="">
                                     </div>
                                 </div>
-                                <a class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#lb-gallery1-z">
+                                <a class="carousel-control carousel-control-prev" role="button" data-slide="prev"
+                                   href="#lb-gallery1-z">
                                     <span class="mbri-left mbr-iconfont" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="carousel-control carousel-control-next" role="button" data-slide="next" href="#lb-gallery1-z">
+                                <a class="carousel-control carousel-control-next" role="button" data-slide="next"
+                                   href="#lb-gallery1-z">
                                     <span class="mbri-right mbr-iconfont" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
@@ -414,12 +453,12 @@
     <!-- NEO-ZONE LEADER -->
     <section class="testimonials2 cid-qRaKHo0BHn mbr-parallax-background" id="testimonials2-r">
         {% if categorie %}
-            <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"> </div>
+            <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(0, 0, 0);"></div>
             <div class="container">
                 <div class="media-container-row">
                     {% if categorie.leader %}
-                         <div class="mbr-figure pr-lg-5" style="width: 45%;">
-                            <img src="{{ asset('uploads/leader/'~categorie.leader.photo)}}">
+                        <div class="mbr-figure pr-lg-5" style="width: 45%;">
+                            <img src="{{ asset('uploads/leader/'~categorie.leader.photo) }}">
                         </div>
                         <div class="media-content px-3 align-self-center mbr-white py-2">
                             <p class="mbr-text testimonial-text mbr-fonts-style display-7">
@@ -431,7 +470,7 @@
                             <p class="mbr-author-desc mbr-fonts-style display-7"> {{ categorie.leader.fonction | upper }}</p>
                         </div>
                     {% endif %}
-                   
+
                 </div>
             </div>
         {% endif %}
@@ -443,9 +482,11 @@
     <section class="counters1 counters cid-qRcR8pp6Bn" id="counters1-2q">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
-                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Statistique du NEO-ZONE <div class="pb-3-border"></div> </h1>
+                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Statistique du NEO-ZONE
+                    <div class="pb-3-border"></div>
+                </h1>
                 <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-                    <strong>Le NEO-ZONE Chasseur en quelques chiffres</strong><br>
+                    <strong>Le NEO-ZONE {{ page }} en quelques chiffres</strong><br>
                 </h2>
             </div>
         </div>
@@ -471,7 +512,7 @@
                                 <span class="mbri-touch-swipe mbr-iconfont"></span>
                             </div>
                             <div class="card-text">
-                                <h3 class="count pt-3 pb-3 mbr-fonts-style display-2"> 0 </h3>
+                                <h3 class="count pt-3 pb-3 mbr-fonts-style display-2"> 1.5 </h3>
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
                                     Taux de mortalité (en %)
                                 </h4>
@@ -484,9 +525,9 @@
                                 <span class="mbri-responsive mbr-iconfont"></span>
                             </div>
                             <div class="card-text">
-                                <h3 class="count pt-3 pb-3 mbr-fonts-style display-2"> 300 </h3>
+                                <h3 class="count pt-3 pb-3 mbr-fonts-style display-2"> 02 </h3>
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">
-                                    Bootstrap
+                                    Tentative d'évasion
                                 </h4>
                             </div>
                         </div>
@@ -502,7 +543,9 @@
     <section class="mbr-section form1 cid-qRbW0bIY7b" id="form1-2p">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
-                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Votre avis sur le NEO-ZONE Chasseur <div class="pb-3-border"></div> </h1>
+                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Votre avis sur le NEO-ZONE {{ page }}
+                    <div class="pb-3-border"></div>
+                </h1>
                 <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
                     <strong>Améliorons ensembles notre espace de survie, notre futur</strong><br>
                 </h2>
@@ -515,20 +558,25 @@
                         Thanks for filling out the form!
                     </div>
                     <form class="mbr-form" action="" method="post" data-form-title="Mobirise Form">
-                        <input type="hidden" name="email" data-form-email="true" value="bQbi5+xMie1lOCBg6uP40nLAXH3yfKxgUFXGMUd6BhgFlFiZzVYWMTKrCc6wA6aqpwGKd6uL4QP94CfCQOXs5nLjMllQ5HTBMxnB9zl+lfRZQBmjSpjpTqbDJYodxnXH" data-form-field="Email">
+                        <input type="hidden" name="email" data-form-email="true"
+                               value="bQbi5+xMie1lOCBg6uP40nLAXH3yfKxgUFXGMUd6BhgFlFiZzVYWMTKrCc6wA6aqpwGKd6uL4QP94CfCQOXs5nLjMllQ5HTBMxnB9zl+lfRZQBmjSpjpTqbDJYodxnXH"
+                               data-form-field="Email">
                         <div class="row row-sm-offset">
                             <div class="col-md-6 multi-horizontal" data-for="nom">
                                 <div class="form-group">
-                                    <label class="form-control-label mbr-fonts-style display-7" for="nom">Nom & Prénom <span>*</span></label>
+                                    <label class="form-control-label mbr-fonts-style display-7" for="nom">Nom & Prénom
+                                        <span>*</span></label>
                                     <input type="text" class="form-control nom" name="nom" required="" id="nom">
                                 </div>
                             </div>
                             <div class="col-md-6 multi-horizontal" data-for="neo-zone-select">
                                 <div class="form-group">
-                                    <label class="form-control-label mbr-fonts-style display-7" for="neo-zone-select">Neo-zone <span>*</span></label>
-                                    <select class="neo-zone-select form-control" name="neo-zone-select" required="" id="neo-zone-select">
+                                    <label class="form-control-label mbr-fonts-style display-7" for="neo-zone-select">Neo-zone
+                                        <span>*</span></label>
+                                    <select class="neo-zone-select form-control" name="neo-zone-select" required=""
+                                            id="neo-zone-select">
                                         <option value="1">Chasseur</option>
-                                        <option value="2">Pêcheur</option>
+                                        <option value="2" selected>Pêcheur</option>
                                         <option value="3">Guérisseur</option>
                                         <option value="4">Agriculteur</option>
                                         <option value="5">Mineur</option>
@@ -537,8 +585,10 @@
                             </div>
                         </div>
                         <div class="form-group" data-for="message">
-                            <label class="form-control-label mbr-fonts-style display-7" for="avis">Message <span>*</span></label>
-                            <textarea type="text" class="form-control" name="message" rows="7" data-form-field="Message" id="avis"></textarea>
+                            <label class="form-control-label mbr-fonts-style display-7" for="avis">Message
+                                <span>*</span></label>
+                            <textarea type="text" class="form-control" name="message" rows="7" data-form-field="Message"
+                                      id="avis"></textarea>
                         </div>
                         <span class="input-group-btn cta">
                             <button href="" type="submit" class="btn btn-primary btn-form display-4">Envoyer</button>
@@ -550,17 +600,20 @@
     </section>
 {% endblock %}
 
-{% block cta%}
+{% block cta %}
     <!-- CTA -->
     <section class="mbr-section content4 cid-qRcR8pp6Bn" id="content4-p">
         <div class="media-container-row">
             <div class="title col-12 col-md-8">
-                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Mettez-vous à l'abris <div class="pb-3-border"></div> </h1>
+                <h1 class="align-center pb-3 mbr-fonts-style display-1"> Mettez-vous à l'abris
+                    <div class="pb-3-border"></div>
+                </h1>
                 <h2 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-                    Façonnez votre futur projet web avec une conception précise et affinez les fonctions codées.Façonnez votre futur projet web avec une conception précise et affinez les fonctions codées.<br>
+                    Assurer votre sécurité car ce monde est dangereux<br>
                 </h2>
                 <div class="mbr-section-btn align-center cta">
-                    <a class="btn btn-md btn-primary display-4" href="javascript:;" data-toggle="modal" data-target="#register-modal"> NOUS REJOINDRE </a>
+                    <a class="btn btn-md btn-primary display-4" href="javascript:;" data-toggle="modal"
+                       data-target="#register-modal"> NOUS REJOINDRE </a>
                 </div>
             </div>
         </div>
@@ -573,12 +626,12 @@
         <div class="container">
             <div class="media-container-row content">
                 <div class="col-md-2 col-sm-4 text-center">
-                    <div class="mb-3 img-logo">
-                        <a href="javascript:;/">
-                            <img src="{{ asset('assets/images/logo-white.png')}}" alt="Mobirise">
+                    <div class="mb-3 img-abri">
+                        <a href="javascript:;">
+                            <img src="{{ asset('assets/images/abri-white.png') }}">
                         </a>
                     </div>
-                    <p class="mbr-fonts-style foot-logo display-7"> TROCZONE</p>
+                    <p class="mbr-fonts-style foot-abri display-7"> TROCZONE</p>
                 </div>
                 <div class="col-md-3 col-sm-4">
                     <p class="mb-4 mbr-fonts-style foot-title display-7">
@@ -623,7 +676,8 @@
                 </div>
                 <div class="media-container-row">
                     <div class="col-sm-6 copyright">
-                        <p class="mbr-text mbr-fonts-style display-7"> © Copyright 2018 WebCup Madagascar - Geek Inside</p>
+                        <p class="mbr-text mbr-fonts-style display-7"> © Copyright 2018 WebCup Madagascar - Geek
+                            Inside</p>
                     </div>
                     <div class="col-md-6">
                         <div class="social-list align-right">
@@ -670,124 +724,129 @@
     <!-- LOGIN -->
     <div class="modal fade own-modal" tabindex="-1" role="dialog" aria-hidden="true" id="login-modal">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                    <img src="assets/custom/css/svg/user.svg" width="60%" alt="User icon"/><br>
-                    <h4 class="text-black">Connexion</h4>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="assets/custom/css/svg/user.svg" width="60%" alt="User icon"/><br>
+                            <h4 class="text-black">Connexion</h4>
+                        </div>
+                    </div>
+                    <form class="login_form" style="margin-top: 20px;">
+                        <div class="login_notification text-center"></div>
+                        <div class="form-group">
+                            <input type="text" class="form-control auth_login" id="auth_login" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control auth_mdp password-field" id="auth_mdp"
+                                   placeholder="xxxxxxxxxxxx">
+                            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-info text-center">SE CONNECTER</button>
+                        </div>
+                    </form>
                 </div>
-              </div>
-              <form class="login_form" style="margin-top: 20px;">
-                <div class="login_notification text-center"></div>
-                <div class="form-group">
-                  <input type="text" class="form-control auth_login" id="auth_login" placeholder="">
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control auth_mdp password-field" id="auth_mdp" placeholder="xxxxxxxxxxxx">
-                  <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                </div>
-                <div class="form-group text-center">
-                    <button type="submit" class="btn btn-info text-center">SE CONNECTER</button>
-                </div>
-              </form>
             </div>
-          </div>
         </div>
     </div>
 {% endblock %}
 
 {% block modals_register %}
-<!-- REJOINDRE -->
+    <!-- REJOINDRE -->
     <div class="modal fade own-modal" tabindex="-1" role="dialog" aria-hidden="true" id="register-modal">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                    <img src="assets/custom/css/svg/user.svg" width="60%" alt="User icon"/><br>
-                    <h4 class="text-black">Formulaire d'adhesion</h4>
-                </div>
-              </div>
-              <form class="register_form" style="margin-top: 20px;">
-                <div class="register_notification text-center"></div>
-                <div class="form-group">
-                  <input type="text" class="form-control nom_register" id="nom_register" placeholder="Votre nom">
-                </div>
-                <div class="form-group">
-                  <select class="form-control old-zone">
-                        <option value="">Votre ancien NEO-ZONE</option>
-                        <option value="1">Chasseur</option>
-                        <option value="2">Pêcheur</option>
-                        <option value="3">Guérisseur</option>
-                        <option value="4">Agriculteur</option>
-                        <option value="5">Mineur</option>
-                  </select>
-                </div>
-                <div class="form-group text-center">
-                    <textarea type="text" class="form-control" name="raison_register" rows="3" id="raison_register" placeholder="Décriver en quelques mots votre motivation à rejoindre ce NEO-ZONE"></textarea>
-                </div>
-                <div class="form-group text-center">
-                    <div class="checkbox">
-                        <label><input type="checkbox" value=""> J'accepte les termes et conditions du site</label>
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="assets/custom/css/svg/user.svg" width="60%" alt="User icon"/><br>
+                            <h4 class="text-black">Formulaire d'adhesion</h4>
+                        </div>
                     </div>
+                    <form class="register_form" style="margin-top: 20px;">
+                        <div class="register_notification text-center"></div>
+                        <div class="form-group">
+                            <input type="text" class="form-control nom_register" id="nom_register"
+                                   placeholder="Votre nom">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control old-zone">
+                                <option value="">Votre ancien NEO-ZONE</option>
+                                <option value="1">Chasseur</option>
+                                <option value="2">Pêcheur</option>
+                                <option value="3">Guérisseur</option>
+                                <option value="4">Agriculteur</option>
+                                <option value="5">Mineur</option>
+                            </select>
+                        </div>
+                        <div class="form-group text-center">
+                            <textarea type="text" class="form-control" name="raison_register" rows="3"
+                                      id="raison_register"
+                                      placeholder="Décriver en quelques mots votre motivation à rejoindre ce NEO-ZONE"></textarea>
+                        </div>
+                        <div class="form-group text-center">
+                            <div class="checkbox">
+                                <label><input type="checkbox" value=""> J'accepte les termes et conditions du
+                                    site</label>
+                            </div>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-info text-center">JOINDRE</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group text-center">
-                    <button type="submit" class="btn btn-info text-center">JOINDRE</button>
-                </div>
-              </form>
             </div>
-          </div>
         </div>
     </div>
 {% endblock %}
 
 {% block javascripts %}
-    <script src="{{ asset('assets/web/assets/jquery/jquery.min.js')}}"></script>
-    <script src="{{ asset('assets/popper/popper.min.js')}}"></script>
-    <script src="{{ asset('assets/tether/tether.min.js')}}"></script>
-    <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('assets/dropdown/js/script.min.js')}}"></script>
-    <script src="{{ asset('assets/touchswipe/jquery.touch-swipe.min.js')}}"></script>
-    <script src="{{ asset('assets/viewportchecker/jquery.viewportchecker.js')}}"></script>
-    <script src="{{ asset('assets/as-pie-progress/jquery-as-pie-progress.min.js')}}"></script>
-    <script src="{{ asset('assets/masonry/masonry.pkgd.min.js')}}"></script>
-    <script src="{{ asset('assets/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
-    <script src="{{ asset('assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js')}}"></script>
-    <script src="{{ asset('assets/smoothscroll/smooth-scroll.js')}}"></script>
-    <script src="{{ asset('assets/vimeoplayer/jquery.mb.vimeo_player.js')}}"></script>
-    <script src="{{ asset('assets/parallax/jarallax.min.js')}}"></script>
-    <script src="{{ asset('assets/custom/js/script.js')}}"></script>
-    <script src="{{ asset('assets/slidervideo/script.js')}}"></script>
-    <script src="{{ asset('assets/formoid/formoid.min.js')}}"></script>
-    <script src="{{ asset('assets/gallery/player.min.js')}}"></script>
-    <script src="{{ asset('assets/gallery/script.js')}}"></script>
-    <script src="{{ asset('assets/libs/wow/wow.min.js')}}"></script>
+    <script src="{{ asset('assets/web/assets/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/popper/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/tether/tether.min.js') }}"></script>
+    <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/dropdown/js/script.min.js') }}"></script>
+    <script src="{{ asset('assets/touchswipe/jquery.touch-swipe.min.js') }}"></script>
+    <script src="{{ asset('assets/viewportchecker/jquery.viewportchecker.js') }}"></script>
+    <script src="{{ asset('assets/as-pie-progress/jquery-as-pie-progress.min.js') }}"></script>
+    <script src="{{ asset('assets/masonry/masonry.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js') }}"></script>
+    <script src="{{ asset('assets/smoothscroll/smooth-scroll.js') }}"></script>
+    <script src="{{ asset('assets/vimeoplayer/jquery.mb.vimeo_player.js') }}"></script>
+    <script src="{{ asset('assets/parallax/jarallax.min.js') }}"></script>
+    <script src="{{ asset('assets/custom/js/script.js') }}"></script>
+    <script src="{{ asset('assets/slidervideo/script.js') }}"></script>
+    <script src="{{ asset('assets/formoid/formoid.min.js') }}"></script>
+    <script src="{{ asset('assets/gallery/player.min.js') }}"></script>
+    <script src="{{ asset('assets/gallery/script.js') }}"></script>
+    <script src="{{ asset('assets/libs/wow/wow.min.js') }}"></script>
     <script type="text/javascript">
-        $(function() {
+        $(function () {
             new WOW().init();
 
             'use strict';
 
-            var response      = new Array();
+            var response = new Array();
 
             /* AUTH */
-            var $loginForm                  = $('.login_form'),
-                auth_notificationClass      = 'login_notification';
+            var $loginForm = $('.login_form'),
+                    auth_notificationClass = 'login_notification';
 
-            $loginForm.submit(function(e) {
+            $loginForm.submit(function (e) {
                 e.preventDefault();
 
-                var login    = $('.auth_login').val(),
-                    mdp    = $('.auth_mdp').val();
+                var login = $('.auth_login').val(),
+                        mdp = $('.auth_mdp').val();
 
                 if (validateLoginAuth(login, mdp) == true) {
                     var data = {
-                        'action'    : 'login',
-                        'login'     : login,
-                        'mdp'       : mdp
+                        'action': 'login',
+                        'login': login,
+                        'mdp': mdp
                     }
-                    $.post('_u5fd/auth/auth.login.php', data, function(Dataresponses) {
+                    $.post('_u5fd/auth/auth.login.php', data, function (Dataresponses) {
                         console.log(Dataresponses);
                         if (Dataresponses.error != undefined) {
                             notificationShow_class(Dataresponses, auth_notificationClass, true, null);
@@ -805,24 +864,24 @@
             });
 
             /* AVIS */
-            var $loginAvis              = $('.form_avis'),
-                avis_notificationClass  = 'avis_notification';
+            var $loginAvis = $('.form_avis'),
+                    avis_notificationClass = 'avis_notification';
 
-            $loginAvis.submit(function(e) {
+            $loginAvis.submit(function (e) {
                 e.preventDefault();
 
-                var nom             = $('.nom_avis').val(),
-                    neo_zone        = $('.neo_zone_avis').val(),
-                    message         = $('.message_avis').val();
+                var nom = $('.nom_avis').val(),
+                        neo_zone = $('.neo_zone_avis').val(),
+                        message = $('.message_avis').val();
 
                 if (nom != "" || neo_zone != "" || message != "") {
                     var data = {
-                        'action'    : 'avis',
-                        'nom'       : nom,
-                        'neo_zone'  : neo_zone,
-                        'message'   : message
+                        'action': 'avis',
+                        'nom': nom,
+                        'neo_zone': neo_zone,
+                        'message': message
                     }
-                    $.post('_u5fd/auth/auth.login.php', data, function(Dataresponses) {
+                    $.post('_u5fd/auth/auth.login.php', data, function (Dataresponses) {
                         console.log(Dataresponses);
                         if (Dataresponses.error != undefined) {
                             notificationShow_class(Dataresponses, avis_notificationClass, true, null);
@@ -838,31 +897,31 @@
                     notificationShow_class(response, avis_notificationClass, true, null);
                 }
             });
-            
-            /* REGISTER */
-            var $register_form           = $('.register_form'),
-                register_notification   = 'register_notification',
-                nom_register            = $('.nom_register'),
-                old_zone                = $('.old-zone'),
-                raison_register         = $('.raison_register'),
-                checkbox                = $('.checkbox');
 
-            $register_form.submit(function(e) {
+            /* REGISTER */
+            var $register_form = $('.register_form'),
+                    register_notification = 'register_notification',
+                    nom_register = $('.nom_register'),
+                    old_zone = $('.old-zone'),
+                    raison_register = $('.raison_register'),
+                    checkbox = $('.checkbox');
+
+            $register_form.submit(function (e) {
                 e.preventDefault();
 
-                var nom             = $('.nom').val(),
-                    neo_zone        = $('.old_zone').val(),
-                    raison          = $('.raison_register').val(),
-                    condition       = $('.checkbox').val();
+                var nom = $('.nom').val(),
+                        neo_zone = $('.old_zone').val(),
+                        raison = $('.raison_register').val(),
+                        condition = $('.checkbox').val();
 
                 if (nom != "" || neo_zone != "" || raison != "") {
                     var data = {
-                        'action'    : 'avis',
-                        'nom'       : nom,
-                        'neo_zone'  : neo_zone,
-                        'raison'    : raison
+                        'action': 'avis',
+                        'nom': nom,
+                        'neo_zone': neo_zone,
+                        'raison': raison
                     }
-                    $.post('_u5fd/auth/auth.login.php', data, function(Dataresponses) {
+                    $.post('_u5fd/auth/auth.login.php', data, function (Dataresponses) {
                         console.log(Dataresponses);
                         if (Dataresponses.error != undefined) {
                             notificationShow_class(Dataresponses, avis_notificationClass, true, null);
@@ -883,7 +942,7 @@
     </script>
 {% endblock %}
 
-    <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
-    <!-- <input name="animation" type="hidden"> -->
+<div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
+<!-- <input name="animation" type="hidden"> -->
 </body>
 </html>
